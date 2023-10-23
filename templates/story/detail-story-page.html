@@ -1,0 +1,758 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- SEO -->
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index,follow" />
+    <meta name="googlebot" content="index,follow" />
+    <meta name="BingBOT" content="index,follow" />
+    <meta name="keywords" content="truyen dich, truyen kiem hiep, truyen ngon tinh, truyen full, truyen hoan thanh, truyen tien hiep, truyen lich su, truyen do thi"/>
+    <meta property="article:tag" content="doc truyen, doc truyen online, truyen hay, truyen full" />
+    <meta property="article:tag" content="kiem hiep, tien hiep, ngon tinh, do thi, huyen huyen, lich su" />
+    <meta property="article:tag" content="truyen dich, truyen ngon tinh, truyen sang tac" />
+
+    <link rel="canonical" href="https://tangkinhcac.vn/">
+    <meta property="og:title" content="Tàng Kinh Các - Thế Giới Truyện Tiên Hiệp Huyền Ảo" />
+    <meta property="og:description" content="Kho tàng truyện chữ Dịch online với nhiều thể loại Kiếm hiệp, Tiên hiệp, Sắc hiệp, Đô thị, Ngôn tình." />
+    <meta property="og:locale" content="vi_VN" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/images/logo_website_1.png" >
+    <meta property="og:image" content="https://ahrefs.com/blog/wp-content/uploads/2019/12/fb-how-to-become-an-seo-expert.png" />
+    <meta property="og:url" content="https://tangthuvien.vn/" />
+    <meta property="og:site_name" content="Tang Kinh Các" />
+
+    <title>Tàng Kinh Các - Thế Giới Truyện Dịch</title>
+    <meta name="description" content="Kho tàng truyện chữ Dịch online với nhiều thể loại Kiếm hiệp, Tiên hiệp, Sắc hiệp, Đô thị, Ngôn tình.">
+
+    <!-- END -->
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/grid_system.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home-page-new.css' %}">
+    <link rel="stylesheet" href="{% static 'css/filter.css' %}">
+    <link rel="stylesheet" href="{% static 'css/detail-story.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive-detail-story.css' %}">
+
+    <!-- Link Font -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+
+    <!-- Link JS -->
+    <script src="{% static 'js/base-detail-story.js' %}" async></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+    <div class="detail-story-page hidden-mobile">
+        <header>
+            <a href="{% url 'home' %}">
+                <div class="cover-photo" style="background-image: url({% static 'images/img-cover.jfif' %});"></div>
+            </a>
+            <div class="grid wide">
+                <div class="row">
+                    <div class="border-line"></div>
+                    <div class="detail-story-header">
+                        <img src="{{story.image.url}}" alt="">
+                        <div class="detail-story__info">
+                            <span>{{story.title}}</span>
+                            <div class="display-rate-tablet" style="display: none;">
+                                <div>
+                                {% if story.rating_score == 0 %}
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                {% elif story.rating_score >= 1 and story.rating_score < 2 %}
+                                <i class="fa-solid fa-star act-rate"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                {% elif story.rating_score >= 2 and story.rating_score < 3 %}
+                                <i class="fa-solid fa-star act-rate"></i>
+                                <i class="fa-solid fa-star act-rate"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                {% elif story.rating_score >= 3 and story.rating_score < 4 %}
+                                <i class="fa-solid fa-star act-rate"></i>
+                                <i class="fa-solid fa-star act-rate"></i>
+                                <i class="fa-solid fa-star act-rate"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                {% elif story.rating_score >= 4 and story.rating_score < 5 %}
+                                <i class="fa-solid fa-star act-rate"></i>
+                                <i class="fa-solid fa-star act-rate"></i>
+                                <i class="fa-solid fa-star act-rate"></i>
+                                <i class="fa-solid fa-star act-rate"></i>
+                                <i class="fa-solid fa-star"></i>
+                                {% elif story.rating_score >= 5 %}
+                                <i class="fa-solid fa-star act-rate"></i>
+                                <i class="fa-solid fa-star act-rate"></i>
+                                <i class="fa-solid fa-star act-rate"></i>
+                                <i class="fa-solid fa-star act-rate"></i>
+                                <i class="fa-solid fa-star act-rate"></i>
+                                {% endif %}
+                                </div>
+                                <i><b>{{story.rating_score}}</b>  /  5   từ<b>{{story.number_of_reviews}} lượt</b></i>
+                            </div>
+                            <div class="detail-story__info-1">
+                                <a href="{% url 'author' story.author %}"
+                                    class="detail-story__info-author">{{story.author}}</a>
+                                <span class="detail-story__info-status">{{story.status}}</span>
+                                {% for genre in genres %}
+                                <a href="{% url 'display_type' genre %}" class="detail-story__info-type">{{genre}}</a>
+                                {% endfor %}
+                            </div>
+                            <p class="description-story">{{story.description}}</p>
+                            <div class="detail-story__info-2">
+                                <span class="detail-story__info-chap">{{story.number_of_chapter}} <b>Chap</b></span>
+                                <span class="detail-story__info-view">{{story.number_of_views}} <b>Lượt xem</b></span>
+                            </div>
+                            <div class="detail-story__info-3">
+                                <span>
+                                    <a href="#">Đọc Truyện</a>
+                                </span>
+                                {% if list_read == None %}
+                                <span id="add-list-read" data-story="{{story.id}}">Thêm Vào Danh Sách Đọc</span>
+                                {% else %}
+                                <span id="add-list-read" data-story="{{story.id}}">Bỏ Lưu</span>
+                                {% endif %}
+                                <!-- Phần đánh giá của tablet -->
+                                {% if rating != None and rating.0.user == user %}
+                                <span class="rate-for-tablet" style="display: none !important;">Đánh Giá</span>
+                                {% else %}
+                                <span class="rate-for-tablet" style="display: none;">Đánh Giá</span>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="detail-story__rate hidden-tablet">
+                            <i>{{story.rating_score}}</i>
+                            <span>{{story.number_of_reviews}} đánh giá</span>
+                            <div class="prevent-select">
+                                {% if story.rating_score == 0 %}
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                {% elif story.rating_score >= 1 and story.rating_score < 2 %}
+                                <i class="fa-solid fa-star act-rate"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                {% elif story.rating_score >= 2 and story.rating_score < 3 %}
+                                <i class="fa-solid fa-star act-rate"></i>
+                                <i class="fa-solid fa-star act-rate"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                {% elif story.rating_score >= 3 and story.rating_score < 4 %}
+                                <i class="fa-solid fa-star act-rate"></i>
+                                <i class="fa-solid fa-star act-rate"></i>
+                                <i class="fa-solid fa-star act-rate"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                {% elif story.rating_score >= 4 and story.rating_score < 5 %}
+                                <i class="fa-solid fa-star act-rate"></i>
+                                <i class="fa-solid fa-star act-rate"></i>
+                                <i class="fa-solid fa-star act-rate"></i>
+                                <i class="fa-solid fa-star act-rate"></i>
+                                <i class="fa-solid fa-star"></i>
+                                {% elif story.rating_score >= 5 %}
+                                <i class="fa-solid fa-star act-rate"></i>
+                                <i class="fa-solid fa-star act-rate"></i>
+                                <i class="fa-solid fa-star act-rate"></i>
+                                <i class="fa-solid fa-star act-rate"></i>
+                                <i class="fa-solid fa-star act-rate"></i>
+                                {% endif %}
+                            </div>
+                            {% if rating != None and rating.0.user == user %}
+                            <span id="rate-story" class="rate-for-laptop" style="display: none;">Đánh Giá</span>
+                            {% else %}
+                            <span id="rate-story" class="rate-for-laptop">Đánh Giá</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-rateStory-laptop" style="display: none;">
+                <div class="modal-overlay"></div>
+                <div class="modal-rate">
+                    <div>
+                        <span id="icon-close-3">
+                            <i class="fa-solid fa-xmark"></i>
+                        </span>
+                    </div>
+                    <div class="section-rate-laptop">
+                        <div class="prevent-select">
+                            <i id="rate-story-1" class="fa-solid fa-star" onclick="rateStory('rate-story-1')"></i>
+                            <i id="rate-story-2" class="fa-solid fa-star"
+                                onclick="checkRateStory('rate-story-1', 'rate-story-2')"></i>
+                            <i id="rate-story-3" class="fa-solid fa-star"
+                                onclick="checkRateStory('rate-story-2','rate-story-3')"></i>
+                            <i id="rate-story-4" class="fa-solid fa-star"
+                                onclick="checkRateStory('rate-story-3','rate-story-4')"></i>
+                            <i id="rate-story-5" class="fa-solid fa-star"
+                                onclick="checkRateStory('rate-story-4','rate-story-5')"></i>
+                        </div>
+                        <span id="rate-story-laptop" data-story="{{story.id}}">Đánh Giá</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="container">
+            <div class="grid wide">
+                <div class="row">
+                    <div class="story-detail">
+                        <div class="content-nav-wrap">
+                            <ul>
+                                <li>
+                                    <span id="detail-info" class="act">Thông tin chi tiết</span>
+                                </li>
+                                <li>
+                                    <span id="list-chapter">Danh sách chương ({{chapters.count}} chương)</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="story-content-wrap">
+                            <div class="left-content">
+                                <div class="story-content__introduce-story">
+                                    <p>{{story.description}}</p>
+                                </div>
+                                <div class="story-content__list-chap" style="display: none;">
+                                    {% if chapters.count >= 24 %}
+                                    {% if new_update_chapters != None %}
+                                    <div class="list-chap__new-update">
+                                        <h3>6 Chương mới nhất</h3>
+                                        <ul>
+                                            {% for new_update_chapter in new_update_chapters %}
+                                            <li>
+                                                <a href="{% url 'display_story' story.pk story.slug new_update_chapter.slug new_update_chapter.pk %}">Chương
+                                                    {{new_update_chapter.chap_number}} : {{new_update_chapter.title}}</a>
+                                            </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                    {% endif %}
+                                    {% endif %}
+                                    <div class="list-chap">
+                                        <h3>Danh Sách Chương</h3>
+                                        <ul id="list-chap">
+                                            {% if page_load_first != None %}
+                                            {% for chapter in page_load_first %}
+                                            <li>
+                                                <a href="{% url 'display_story' story.slug chapter.slug %}">Chương
+                                                    {{chapter.chap_number}} : {{chapter.title}}</a>
+                                            </li>
+                                            {% endfor %}
+                                            {% else %}
+                                            {% for chapter in chapters %}
+                                            <li>
+                                                <a href="{% url 'display_story' story.pk story.slug chapter.slug chapter.pk %}">Chương
+                                                    {{chapter.chap_number}} : {{chapter.title}}</a>
+                                            </li>
+                                            {% endfor %}
+                                            {% endif %}
+                                        </ul>
+                                    </div>
+                                    <div class="pagination-list-chap">
+                                        {% if total_pages >= 6 and total_pages != None %}
+                                        <div class="number_page">
+                                            <span class="data-start pagination-act" id="act-1" data-start="{{page_range.0}}" onclick="pagination3(this, '{{story.id}}')">{{page_range.0}}</span>
+                                            <span class="data-mid" data-mid="{{page_range.1}}" onclick="pagination3(this, '{{story.id}}')">{{page_range.1}}</span>
+                                            <span class="data-end" data-end="{{page_range.2}}" onclick="pagination3(this, '{{story.id}}')">{{page_range.2}}</span>
+                                            <span class="page-dot">...</span>
+                                            <span class="data-fixed data-none" data-fixed="{{elm_nearest_end}}" onclick="pagination2(this, '{{story.id}}', {{elm_nearest_end}})">{{elm_nearest_end}}</span>
+                                            <span class="data-none" onclick="pagination2(this, '{{story.id}}', {{elm_near_end}})">{{elm_near_end}}</span>
+                                            <span class="data-none" onclick="pagination2(this, '{{story.id}}', {{elm_end}})">{{elm_end}}</span>
+                                        </div>
+                                        <div class="choice-page">
+                                            <input type="text" id="choice-page">
+                                            <button onclick="submitChoicePage('{{story.id}}')" id="submit-choice">Đi</button>
+                                        </div>
+                                        {% elif total_pages == 1 or total_pages == None %}
+                                        {% else %}
+                                        <span class="next-page" onclick="paginationPrev(this, '{{story.id}}')" data-page="1">&lt;</span>
+                                        <div class="number_page">
+                                            {% for p in page_range %}
+                                            {% if p == 1  %}
+                                            <span class="pagination-act" id="act-{{p}}" onclick="pagination(this, '{{story.id}}', {{p}})">{{p}}</span>
+                                            {% else %}
+                                            <span id="act-{{p}}" onclick="pagination(this, '{{story.id}}', {{p}})">{{p}}</span>
+                                            {% endif %}
+                                            {% endfor %}
+                                        </div>
+                                        <span class="next-page" onclick="paginationNext(this, '{{story.id}}', {{total_pages}})" data-page="1">&gt;</span>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="right-content hidden-tablet">
+                                <span>Đề Cử</span>
+                                <div class="nominated-story hidden-tablet">
+                                    <ul>
+                                        {% for story, genre in zip_nominated %}
+                                        <li>
+                                            <div class="nominated-story__no-1">
+                                                <div class="nominated-story__info">
+                                                    <a href="{% url 'display_info_story' story.pk story.slug %}">
+                                                        <span>{{story.title}}</span>
+                                                    </a>
+                                                    <span>{{story.number_of_chapter}} Chương</span>
+                                                    <div>
+                                                        <a href="{% url 'display_type' genre %}" class="story-info__type">{{genre}}</a>
+                                                        <a href="{% url 'author' story.author %}" class="story-info__author">{{story.author}}</a>
+                                                    </div>
+                                                </div>
+                                                <img src="{{story.image.url}}" alt="">
+                                            </div>
+                                        </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-rateStory-tablet" style="display: none;">
+        <div class="modal-overlay"></div>
+        <div class="modal-rate">
+            <div>
+                <span id="icon-close-1">
+                    <i class="fa-solid fa-xmark"></i>
+                </span>
+            </div>
+            <div class="section-rate-tablet">
+                <div class="prevent-select">
+                    <i id="rate-story-tablet-1" class="fa-solid fa-star"
+                        onclick="rateStoryTablet('rate-story-tablet-1')"></i>
+                    <i id="rate-story-tablet-2" class="fa-solid fa-star"
+                        onclick="checkRateStoryTablet('rate-story-tablet-1', 'rate-story-tablet-2')"></i>
+                    <i id="rate-story-tablet-3" class="fa-solid fa-star"
+                        onclick="checkRateStoryTablet('rate-story-tablet-2','rate-story-tablet-3')"></i>
+                    <i id="rate-story-tablet-4" class="fa-solid fa-star"
+                        onclick="checkRateStoryTablet('rate-story-tablet-3','rate-story-tablet-4')"></i>
+                    <i id="rate-story-tablet-5" class="fa-solid fa-star"
+                        onclick="checkRateStoryTablet('rate-story-tablet-4','rate-story-tablet-5')"></i>
+                </div>
+                <span id="rate-story-tablet" data-story="{{story.id}}">Đánh Giá</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="detail-story-page-for-mobile" style="display: none;">
+        <header>
+            <div class="header-for-mobile">
+                <a href="{% url 'home' %}">
+                    <img src="{% static 'images/text-TKC.png' %}" alt="">
+                </a>
+            </div>
+        </header>
+        <div class="container">
+            <div class="detail-story">
+                <img src="{{story.image.url}}" alt="">
+                <div class="detail-story__info">
+                    <span>{{story.title}}</span>
+                    <div class="sum-rate">
+                        <div>
+                            {% if story.rating_score == 0 %}
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            {% elif story.rating_score >= 1 and story.rating_score < 2 %}
+                            <i class="fa-solid fa-star act-rate"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            {% elif story.rating_score >= 2 and story.rating_score < 3 %}
+                            <i class="fa-solid fa-star act-rate"></i>
+                            <i class="fa-solid fa-star act-rate"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            {% elif story.rating_score >= 3 and story.rating_score < 4 %}
+                            <i class="fa-solid fa-star act-rate"></i>
+                            <i class="fa-solid fa-star act-rate"></i>
+                            <i class="fa-solid fa-star act-rate"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            {% elif story.rating_score >= 4 and story.rating_score < 5 %}
+                            <i class="fa-solid fa-star act-rate"></i>
+                            <i class="fa-solid fa-star act-rate"></i>
+                            <i class="fa-solid fa-star act-rate"></i>
+                            <i class="fa-solid fa-star act-rate"></i>
+                            <i class="fa-solid fa-star"></i>
+                            {% elif story.rating_score >= 5 %}
+                            <i class="fa-solid fa-star act-rate"></i>
+                            <i class="fa-solid fa-star act-rate"></i>
+                            <i class="fa-solid fa-star act-rate"></i>
+                            <i class="fa-solid fa-star act-rate"></i>
+                            <i class="fa-solid fa-star act-rate"></i>
+                            {% endif %}
+                        </div>
+                        <i><b>{{story.rating_score}}</b>  / 5   từ <b>{{story.number_of_reviews}} lượt</b></i>
+                    </div>
+                    <div class="detail-story__info-type">
+                        {% for genre in genres %}
+                        <a href="{% url 'display_type' genre %}" style="margin-right: 12px;">{{genre}}</a>
+                        {% endfor %}
+                    </div>
+                    <div class="detail-story__info-2">
+                        <span class="detail-story__info-chap">{{story.number_of_chapter}} <b>Chương</b></span>
+                        <span class="detail-story__info-status">{{story.status}}</span>
+                    </div>
+                </div>
+                <div class="detail-story__rate hidden-tablet hidden-mobile">
+                    <i>4.7</i>
+                    <span>629 đánh giá</span>
+                    <div class="prevent-select">
+                        <i id="rate-story-1" class="fa-solid fa-star" onclick="rateStory('rate-story-1')"></i>
+                        <i id="rate-story-2" class="fa-solid fa-star"
+                            onclick="checkRateStory('rate-story-1', 'rate-story-2')"></i>
+                        <i id="rate-story-3" class="fa-solid fa-star"
+                            onclick="checkRateStory('rate-story-2','rate-story-3')"></i>
+                        <i id="rate-story-4" class="fa-solid fa-star"
+                            onclick="checkRateStory('rate-story-3','rate-story-4')"></i>
+                        <i id="rate-story-5" class="fa-solid fa-star"
+                            onclick="checkRateStory('rate-story-4','rate-story-5')"></i>
+                    </div>
+                    <span>Đánh Giá</span>
+                </div>
+            </div>
+            <div class="extend-story">
+                <div>
+                    <a href="#">Đọc Truyện</a>
+                    <span id="list-chapter-mobile">Mục Lục</span>
+                    {% if rating != None and rating.0.user == user %}
+                    <span class="rate-for-mobile" style="display: none;">Đánh Giá</span>
+                    {% else %}
+                    <span class="rate-for-mobile">Đánh Giá</span>
+                    {% endif %}
+                    {% if list_read == None %}
+                    <span id="add-list-read-mobile" data-story="{{story.id}}">Thêm Vào DSĐ</span>
+                    {% else %}
+                    <span id="add-list-read-mobile" data-story="{{story.id}}">Bỏ Lưu</span>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="modal-rateStory-mobile" style="display: none;">
+                <div class="modal-overlay"></div>
+                <div class="modal-rate">
+                    <div>
+                        <span id="icon-close-2">
+                            <i class="fa-solid fa-xmark"></i>
+                        </span>
+                    </div>
+                    <div class="section-rate-mobile">
+                        <div class="prevent-select">
+                            <i id="rate-story-mobile-1" class="fa-solid fa-star"
+                                onclick="rateStoryMobile('rate-story-mobile-1')"></i>
+                            <i id="rate-story-mobile-2" class="fa-solid fa-star"
+                                onclick="checkRateStoryMobile('rate-story-mobile-1', 'rate-story-mobile-2')"></i>
+                            <i id="rate-story-mobile-3" class="fa-solid fa-star"
+                                onclick="checkRateStoryMobile('rate-story-mobile-2','rate-story-mobile-3')"></i>
+                            <i id="rate-story-mobile-4" class="fa-solid fa-star"
+                                onclick="checkRateStoryMobile('rate-story-mobile-3','rate-story-mobile-4')"></i>
+                            <i id="rate-story-mobile-5" class="fa-solid fa-star"
+                                onclick="checkRateStoryMobile('rate-story-mobile-4','rate-story-mobile-5')"></i>
+                        </div>
+                        <span id="rate-story-mobile" data-story="{{story.id}}">Đánh Giá</span>
+                    </div>
+                </div>
+            </div>
+            <div class="list-chapter-mobile" style="display: none;">
+                <div class="header-list-chap">
+                    <i class="fa-solid fa-arrow-left" id="icon-close-list-chap"></i>
+                    <span>Danh Sách Chương</span>
+                    <span id="close-list-chap-mobile" style="cursor: pointer;">Xong</span>
+                </div>
+                <div class="container-list-chapter">
+                    {% if chapters.count >= 24 %}
+                    {% if new_update_chapters != None %}
+                    <div class="list-new-update-chapter">
+                        <span>Chương Mới Nhất</span>
+                        <ul>
+                            {% for new_update_chapter in new_update_chapters %}
+                            <li class="container-list-chapter__item">
+                                <a href="{% url 'display_story' story.pk story.slug new_update_chapter.slug new_update_chapter.pk %}">Chương {{new_update_chapter.chap_number}} : {{new_update_chapter.title}}</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endif %}
+                    {% endif %}
+                    <div class="list-all-chapter">
+                        <span>Toàn Bộ Chương</span>
+                        <ul>
+                            {% for chapter in chapters %}
+                            <li class="container-list-chapter__item">
+                                <a href="{% url 'display_story' story.pk story.slug chapter.slug chapter.pk %}">Chương {{chapter.chap_number}} : {{chapter.title}}</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            {% if chapters.count >= 24 %}
+            <div class="new-story-update">
+                <span>DS Chương</span>
+                <span>Cập nhật: {{new_update_chapters.0.posting_date}} - Chương {{new_update_chapters.0.chap_number}}</span>
+            </div>
+            {% endif %}
+            <div class="introduce-story">
+                <h3>Giới Thiệu</h3>
+                <p>{{story.description}}</p>
+            </div>
+            <div class="author-story">
+                <h3>Tác Giả</h3>
+                <div>
+                    <img src="{% static 'images/default-avatar.jpeg' %}" alt="">
+                    <a href="{% url 'author' story.author %}">
+                        <div>
+                            <span>{{story.author}}</span>
+                            <span>Chưa có mô tả</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="comments-story">
+        <h3>Bình Luận</h3>
+        <div class="comments-story__body">
+            <div class="new-comments">
+                {% if userProfile == None %}
+                <img src="{% static 'images/default-avatar.jpeg' %}" alt="">
+                {% else %}
+                <img src="{{userProfile.profile_picture.url}}" alt="">
+                {% endif %}
+                <div class="new-comments__body">
+                    <textarea id="content-comment" name="content_comment"
+                        placeholder="Add a comment"></textarea>
+                    <input type="submit" id="btn-comment" data-story="{{story.id}}" value="Bình luận">
+                </div>
+            </div>
+            {% if comments_all != None or child_comments != None %}
+            <div class="list-comments" id="show-comment">
+                {% for comment in page_comment_load_first %}
+                <div class="list-comments__item" id="list-comments__item-{{comment.id}}">
+                    <div class="show-comment" id="parent-comment-{{comment.id}}">
+                        <img src="{{comment.image_user.url}}" alt="">
+                        <div class="list-comments__item-body">
+                            <div class="comment-item__body-user">
+                                <h3>{{comment.user.username}}</h3>
+                                <h4>Bá Tánh Bình Dân</h4>
+                            </div>
+                            <p class="comment-item__body-content">{{comment.content}}</p>
+                            <div class="comment-item__body-info">
+                                <span>{{comment.date_created}}</span>
+                                <div onclick="addReplyComment({{comment.id}}, {{story.id}}, '{{userProfile.profile_picture.url}}')">
+                                    <i class="fa-regular fa-comment-dots"></i>
+                                    <span>{{comment.number_reply}} trả lời</span>
+                                </div>
+                                <div onclick="addLikeComment({{comment.id}}); this.removeAttribute('onclick');" id="style-{{comment.id}}">
+                                    <i class="fa-regular fa-thumbs-up"></i>
+                                    <span id="like-{{comment.id}}">{{comment.number_like}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% if comment.number_reply > 0 %}
+                    <div class="list-reply-comment" style="display: none;" id="show-parent_comment-{{comment.id}}">
+                    {% for child_comment in child_comments %}
+                    {% if comment.id == child_comment.parent_comment.id %}
+                    <div class="list-reply-comment__item">
+                        <img src="{{child_comment.image_user.url}}" alt="">
+                        <div class="list-comments__item-body">
+                            <div class="comment-item__body-user">
+                                <h3>{{child_comment.user.username}}</h3>
+                                <h4>Bá Tánh Bình Dân</h4>
+                            </div>
+                            <p class="comment-item__body-content">{{child_comment.content}}</p>
+                            <div class="comment-item__body-info">
+                                <span>{{child_comment.date_created}}</span>
+                                <div onclick="addLikeComment({{child_comment.id}}); this.removeAttribute('onclick');" id="style-{{child_comment.id}}">
+                                    <i class="fa-regular fa-thumbs-up"></i>
+                                    <span id="like-{{child_comment.id}}">{{child_comment.number_like}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+        <div class="pagination-comment">
+            {% if total_pages_comment >= 6 %}
+            <div class="number-page-comment">
+                <span class="data_comment-start pagination_comment-act" id="act-comment-1" data-startcom="{{page_range_comment.0}}" onclick="paginationCom3(this, '{{story.id}}')">{{page_range_comment.0}}</span>
+                <span class="data_comment-mid" data-midcom="{{page_range_comment.1}}" onclick="paginationCom3(this, '{{story.id}}')">{{page_range_comment.1}}</span>
+                <span class="data_comment-end" data-endcom="{{page_range_comment.2}}" onclick="paginationCom3(this, '{{story.id}}')">{{page_range_comment.2}}</span>
+                <span class="page_comment-dot">...</span>
+                <span class="data_comment-fixed data_comment-none" data-fixedcom="{{elm_nearest_end_comment}}" onclick="paginationCom2(this, '{{story.id}}', {{elm_nearest_end_comment}})">{{elm_nearest_end_comment}}</span>
+                <span class="data_comment-none" onclick="paginationCom2(this, '{{story.id}}', {{elm_near_end_comment}})">{{elm_near_end_comment}}</span>
+                <span class="data_comment-none" onclick="paginationCom2(this, '{{story.id}}', {{elm_end_comment}})">{{elm_end_comment}}</span>
+            </div>
+            <div class="choice-page-comment">
+                <input type="text" id="choice-page-comment">
+                <button onclick="submitChoicePageCom('{{story.id}}')" id="submit-comment-choice">Đi</button>
+            </div>
+            {% elif total_pages_comment == None %}
+            {% else %}
+            <span class="next-page-comment" onclick="paginationComPrev(this, '{{story.id}}')" data-pagecom="1">&lt;</span>
+            <div class="number-page-comment">
+                {% for p in page_range_comment %}
+                {% if p == 1  %}
+                <span class="pagination_comment-act" id="act-comment-{{p}}" onclick="paginationCom(this, '{{story.id}}', {{p}})">{{p}}</span>
+                {% else %}
+                <span id="act-comment-{{p}}" onclick="paginationCom(this, '{{story.id}}', {{p}})">{{p}}</span>
+                {% endif %}
+                {% endfor %}
+            </div>
+            <span class="next-page-comment" onclick="paginationComNext(this, '{{story.id}}', {{total_pages_comment}})" data-pagecom="1">&gt;</span>
+            {% endif %}
+        </div>
+    </div>
+    <footer>
+        <div class="footer hidden-tablet hidden-mobile">
+            <div class="grid wide">
+                <div class="row">
+                    <div class="col xl-6 l-6" style="padding-left: 0;">
+                        <div class="introduce-about-web">
+                            <h4><i class="fa fa-info-circle"></i> Giới Thiệu</h4>
+                            <div>
+                                Đọc truyện online, truyện chữ, truyen
+                                full, truyện hay được đóng góp hoàn toàn bởi các thành
+                                viên: dịch giả, tác giả, editor.. tâm huyết. Web truyen luôn cập nhật những bộ
+                                truyện
+                                mới thuộc các thể loại đặc sắc như ngôn tình,
+                                tình cảm, đam mỹ, bách
+                                hợp một cách nhanh nhất.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col xl-3 l-3">
+                        <div class="support">
+                            <h4><i class="fa fa-life-ring"></i> Hỗ Trợ</h4>
+                            <div class="people-support">
+                                <p>
+                                    <span>Vấn đề khác:</span>
+                                    <i class="fa-brands fa-telegram"></i>
+                                    <a href="https://t.me/Diggory_24">Sỹ Thiện</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col xl-3 l-3" style="padding-right: 0;">
+                        <div class="contact">
+                            <h4><i class="fa fa-address-card"></i> Liên Hệ</h4>
+                            <div>
+                                <p class="contact-type">
+                                    <span style="padding-right: 44px;">Email:</span>
+                                    <i class="fa fa-envelope-open"></i>
+                                    <span>truyen.tangkinhcac.vn@gmail.com</span>
+                                </p>
+                                <p class="contact-type">
+                                    <span style="padding-right: 17px;">Facebook:</span>
+                                    <i class="fa-brands fa-square-facebook"></i>
+                                    <a href="https://www.facebook.com/truyen.tangkinhcac.vn">Fb.com/tangkinhcac.vn</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-for-tablet" style="display: none;">
+            <div class="grid wide">
+                <div class="row">
+                    <div class="col m-12" style="padding-left: 0; padding-right: 0;">
+                        <div class="introduce-about-web">
+                            <h4><i class="fa fa-info-circle"></i> Giới Thiệu</h4>
+                            <div>
+                                Đọc truyện online, truyện chữ, truyen
+                                full, truyện hay được đóng góp hoàn toàn bởi các thành
+                                viên: dịch giả, tác giả, editor.. tâm huyết. Web truyen luôn cập nhật những bộ
+                                truyện
+                                mới thuộc các thể loại đặc sắc như ngôn tình,
+                                tình cảm, đam mỹ, bách
+                                hợp một cách nhanh nhất.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col m-6">
+                        <div class="support">
+                            <h4><i class="fa fa-life-ring"></i> Hỗ Trợ</h4>
+                            <div class="people-support">
+                                <p>
+                                    <span>Vấn đề khác:</span>
+                                    <i class="fa-brands fa-telegram"></i>
+                                    <a href="https://t.me/Diggory_24">Sỹ Thiện</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col m-6" style="padding-right: 0;">
+                        <div class="contact">
+                            <h4><i class="fa fa-address-card"></i> Liên Hệ</h4>
+                            <div>
+                                <p class="contact-type">
+                                    <span style="padding-right: 44px;">Email:</span>
+                                    <i class="fa fa-envelope-open"></i>
+                                    <span>truyen.tangkinhcac.vn@gmail.com</span>
+                                </p>
+                                <p class="contact-type">
+                                    <span style="padding-right: 17px;">Facebook:</span>
+                                    <i class="fa-brands fa-square-facebook"></i>
+                                    <a href="https://www.facebook.com/truyen.tangkinhcac.vn">Fb.com/tangkinhcac.vn</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="grid wide">
+                <div class="footer-bottom-logo">
+                    <a class="bottom-logo" href="{% url 'home' %}">
+                        <img src="{% static 'images/log-rieng.png' %}" alt="">
+                    </a>
+                    <span>© 2007 Tàng Thư Viện</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>

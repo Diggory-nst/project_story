@@ -1,0 +1,58 @@
+@media (max-width: 575px) {
+
+    h2{
+        font-size: 1.8rem;
+    }
+
+    .inputbox label{
+        font-size: 1.5rem;
+    }
+
+    .inputbox input{
+        font-size: 1.4rem;
+    }
+
+    button{
+        font-size: 1.6rem;
+    }
+
+    .register p{
+        font-size: 1.4rem;
+    }
+
+    .waiting-reset{
+        padding: 0 10px;
+    }
+
+    .waiting-verification{
+        padding: 0 10px;
+    }
+
+    .waiting-reset>h2 {
+        text-align: center;
+        font-size: 1.8rem;
+        color: white;
+        line-height: 3rem;
+    }
+
+    .waiting-reset>p {
+        text-align: center;
+        font-size: 1.8rem;
+        color: white;
+        line-height: 3rem;
+    }
+
+    .waiting-verification>h2 {
+        text-align: center;
+        font-size: 1.8rem;
+        color: white;
+        line-height: 3rem;
+    }
+
+    .waiting-verification>p {
+        text-align: center;
+        font-size: 1.8rem;
+        color: white;
+        line-height: 3rem;
+    }
+}

@@ -1,0 +1,253 @@
+@media (min-width:1200px) and (max-width: 1500px) {
+
+    /* Section Home-page */
+
+    .header-navigation>div {
+        width: 1200px;
+    }
+
+    .slideshow {
+        width: calc(1200px - 594px);
+    }
+
+    .slide {
+        width: 168px;
+        height: 232px;
+    }
+
+    .slide:nth-of-type(1) {
+        transform: translateX(-84px);
+    }
+
+    .slide:nth-of-type(2) {
+        transform: translateX(330px);
+        height: 212px;
+    }
+
+    .slide:nth-of-type(3) {
+        transform: translateX(436px);
+        height: 192px;
+    }
+
+    .slide:nth-of-type(4) {
+        transform: translateX(436px);
+        height: 192px;
+    }
+
+    .slide:nth-of-type(5) {
+        transform: translateX(0px);
+        height: 192px;
+    }
+
+    .slide:nth-of-type(6) {
+        transform: translateX(106px);
+        height: 212px;
+    }
+
+    .banner-event>img {
+        width: calc(1200px - 594px);
+    }
+
+    .story-info>a {
+        max-width: 292px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .story-type>span {
+        font-size: 1.6rem;
+    }
+
+    .nominated-story {
+        padding: 5px 15px;
+    }
+
+    .footer {
+        padding-bottom: 10px;
+    }
+
+    /* Section author-page */
+
+    .section-filtered-story {
+        width: calc(var(--width2) - 236px);
+        margin-left: 20px;
+    }
+
+    .filtered-story li {
+        width: 468px;
+    }
+
+    .filtered-story li:nth-of-type(odd) {
+        margin-right: 28px;
+    }
+
+    .filtered-story__info>div:nth-of-type(1)>a {
+        margin-right: 5px;
+        padding-right: 10px;
+    }
+
+    .filtered-story__info>div:nth-of-type(1)>span {
+        margin-right: 5px;
+        padding-right: 10px;
+    }
+
+    .filtered-story__info>div:nth-of-type(1)>span:last-child {
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Section Display Story */
+
+    .wide1 {
+        width: 1100px;
+    }
+
+    /* Section personal page */
+
+    .personal-category {
+        width: 220px;
+    }
+
+    .personal-category {
+        margin-right: 30px;
+    }
+
+    .personal-info {
+        width: calc(var(--width2) - 250px);
+    }
+
+    .personal-info__header-level>span {
+        width: 740px;
+    }
+
+    .account-balance {
+        width: 202px;
+    }
+
+    .form-group>input {
+        width: 642px;
+    }
+
+    .listed-story {
+        width: calc(var(--width2) - 250px);
+    }
+
+    .listed-story>div {
+        width: 289px;
+    }
+
+    .transaction-history {
+        width: calc(var(--width2) - 250px);
+    }
+
+    .naptt-history__detail>div {
+        width: 181px;
+    }
+
+    .naptt-history__detail>div:nth-of-type(1) {
+        width: 161px;
+    }
+
+    .naptt-history__detail>div:nth-of-type(2) {
+        width: 161px;
+    }
+
+    .naptt-history__detail>div:nth-of-type(4) {
+        width: 221px;
+    }
+
+    /* Detail Story Page */
+
+    .detail-story__info {
+        transform: translateX(-36px);
+    }
+
+    .story-detail {
+        width: 100%;
+    }
+
+    .content-nav-wrap::before {
+        width: 1200px;
+    }
+
+    /* Personal Page */
+
+    .personal-category__item {
+        font-size: 1.6rem;
+    }
+}
+
+/* Tablet */
+
+@media (min-width:800px) and (max-width:1023px) {
+
+    .hidden-tablet {
+        display: none;
+    }
+
+    .introduce-about-web>h4 {
+        text-align: center;
+    }
+
+    .introduce-about-web>h4 {
+        font-size: 2rem;
+    }
+
+    .introduce-about-web>div {
+        font-size: 1.7rem;
+        line-height: 2.8rem;
+    }
+
+    .support {
+        margin-top: 20px;
+    }
+
+    .support>h4 {
+        font-size: 2rem;
+    }
+
+    .people-support span {
+        font-size: 1.7rem;
+    }
+
+    .people-support i {
+        font-size: 1.5rem;
+    }
+
+    .people-support a {
+        font-size: 1.5rem;
+    }
+
+    .contact {
+        margin-top: 20px;
+    }
+
+    .contact>h4 {
+        font-size: 2rem;
+    }
+
+    .contact-type>span {
+        font-size: 1.7rem;
+    }
+
+    .contact-type>i {
+        font-size: 1.5rem;
+    }
+
+    .contact-type>a {
+        font-size: 1.5rem;
+    }
+
+    .footer-for-tablet {
+        display: block !important;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 575px) {
+    .hidden-mobile {
+        display: none !important;
+    }
+}

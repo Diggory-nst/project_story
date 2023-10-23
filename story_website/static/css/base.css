@@ -1,0 +1,61 @@
+:root {
+    --white-color: #fff;
+    --black-color: #000;
+    /* Màu Xám Nhạt */
+    --greyish-color: #dbdbdb;
+    --width1: 1400px;
+    --width2: 1200px;
+    --color-border: #a6a6a6;
+    --color-background-mobile: #cbd8dd33;
+}
+
+* {
+    box-sizing: inherit;
+    /* font-family: 'EB Garamond', serif; */
+    font-family: 'Lora', serif;
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+}
+
+body>.web-page {
+    line-height: 1.4;
+    height: 100%;
+    background-image: url(/images/background-body.png);
+    background-position: top;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}

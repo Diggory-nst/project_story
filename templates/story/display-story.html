@@ -1,0 +1,306 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- SEO -->
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index,follow" />
+    <meta name="googlebot" content="index,follow" />
+    <meta name="BingBOT" content="index,follow" />
+    <meta name="keywords" content="truyen dich, truyen kiem hiep, truyen ngon tinh, truyen full, truyen hoan thanh, truyen tien hiep, truyen lich su, truyen do thi"/>
+    <meta property="article:tag" content="doc truyen, doc truyen online, truyen hay, truyen full" />
+    <meta property="article:tag" content="kiem hiep, tien hiep, ngon tinh, do thi, huyen huyen, lich su" />
+    <meta property="article:tag" content="truyen dich, truyen ngon tinh, truyen sang tac" />
+
+    <link rel="canonical" href="https://tangkinhcac.vn/">
+    <meta property="og:title" content="Tàng Kinh Các - Thế Giới Truyện Tiên Hiệp Huyền Ảo" />
+    <meta property="og:description" content="Kho tàng truyện chữ Dịch online với nhiều thể loại Kiếm hiệp, Tiên hiệp, Sắc hiệp, Đô thị, Ngôn tình." />
+    <meta property="og:locale" content="vi_VN" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/images/logo_website_1.png" >
+    <meta property="og:image" content="https://ahrefs.com/blog/wp-content/uploads/2019/12/fb-how-to-become-an-seo-expert.png" />
+    <meta property="og:url" content="https://tangthuvien.vn/" />
+    <meta property="og:site_name" content="Tang Kinh Các" />
+
+    <title>Tàng Kinh Các - Thế Giới Truyện Dịch</title>
+    <meta name="description" content="Kho tàng truyện chữ Dịch online với nhiều thể loại Kiếm hiệp, Tiên hiệp, Sắc hiệp, Đô thị, Ngôn tình.">
+
+    <!-- END -->
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/grid_system.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home-page.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home-page-new.css' %}">
+    <link rel="stylesheet" href="{% static 'css/filter.css' %}">
+    <link rel="stylesheet" href="{% static 'css/display-story.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive-display-story.css' %}">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <!-- Link Font -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+
+    <!-- Link JS -->
+    <script src="{% static 'js/base-display-story.js' %}" async></script>
+
+</head>
+
+<body>
+    <div class="display-story">
+        <header class="header">
+            <div class="grid wide">
+                <div class="row">
+                    <div class="header-logo hidden-mobile">
+                        <div class="section-logo">
+                            <a href="{% url 'home' %}">
+                                <img src="{% static 'images/log-rieng.png' %}" alt="">
+                                <div>
+                                    <img src="{% static 'images/text-TKC.png' %}" alt="">
+                                    <img src="{% static 'images/text-slogan.png' %}" alt="">
+                                </div>
+                            </a>
+                        </div>
+                        <div class="section-account">
+                            {% if user.is_anonymous == True %}
+                            <div class="account-sign-in">
+                                <a href="{% url 'logIn' %}">
+                                    <i class="fa-regular fa-user"></i>
+                                    <span>Tài Khoản</span>
+                                </a>
+                            </div>
+                            {% else %}
+                            <div class="account">
+                                <a href="{% url 'my_account' %}">
+                                    <i class="fa-regular fa-address-book"></i>
+                                    <span><i>{{user.username}}</i></span>
+                                </a>
+                                <a href="{% url 'logOut' %}">
+                                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                </a>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="header-logo-for-mobile" style="display: none;">
+                        <img src="{% static 'images/log-rieng.png' %}" alt="">
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="container">
+            <div class="grid wide wide1">
+                <div class="row">
+                    <div class="show-story">
+                        <div class="title-story">
+                            <a href="{% url 'display_info_story' story.pk story.slug %}">
+                                <h2>{{story.title}}</h2>
+                            </a>
+                            <span>Chương {{chapter.chap_number}}: {{chapter.title}}</span>
+                        </div>
+                        <div class="setting">
+                            <div class="setting-list">
+                                <i class="fa-solid fa-list-ul"></i>
+                            </div>
+                            <div class="setting-setting">
+                                <i class="fa-solid fa-gear"></i>
+                            </div>
+                            <div class="error-chapter">
+                                <div>
+                                    <i class="fa-solid fa-triangle-exclamation"></i>
+                                </div>
+                                <span class="notification-error-chapter">Báo Lỗi Chương</span>
+                            </div>
+                        </div>
+                        <div class="custom-background" style="display: none;">
+                            <div class="icon-close">
+                                <span id="icon-close-3">
+                                    <i class="fa-solid fa-xmark"></i>
+                                </span>
+                            </div>
+                            <div class="custom-background-color">
+                                <span>Màu nền:</span>
+                                <div>
+                                    <span id="custom-background-1" class="check-color">
+                                        <i class="fa-solid fa-check icon-check"></i>
+                                    </span>
+                                    <span id="custom-background-2"></span>
+                                    <span id="custom-background-3"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="body-story">
+                            <div class="content-story">
+                                <span class="hidden-mobile">Chương {{chapter.chap_number}}: {{chapter.title}}</span>
+                                <div class="display-content-story">
+                                    {% if chapter.vip == False or condition %}
+                                    {{chapter.content|safe}}
+                                    {% else %}
+                                    <div class="chapter-vip">
+                                        <h2>Cần 3 Linh Thạch để mở khóa chương này</h2>
+                                        <a href="{% url 'open_chapter' story.id story.slug chapter.id chapter.slug %}">Mở khóa
+                                            chương</a>
+                                        {% if user.is_anonymous == True %}
+                                        <a href="{% url 'logIn' %}" class="open-combo-vip">Mở Combo/Full</a>
+                                        {% else %}
+                                        <span id="open-combo-vip">Mở Combo/Full</span>
+                                        {% endif %}
+                                        <a href="{% url 'payment' %}">Thêm Linh Thạch</a>
+                                        {% if messages %}
+                                        {% for message in messages %}
+                                        {% if message.tags == 'error' %}
+                                        <span
+                                            style="color: red; font-size: 1.5rem; margin-bottom: 15px;">{{message}}</span>
+                                        {% endif %}
+                                        {% endfor %}
+                                        {% endif %}
+                                    </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal" id="model-vip" style="display: none;">
+                            <div class="modal-overlay"></div>
+                            <div class="modal-open-combo-vip">
+                                <div class="icon-close">
+                                    <span id="icon-close-4">
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </span>
+                                </div>
+                                    <div class="open-combo-vip__body">
+                                        <h1>Mở Khóa Combo Giá Ưu Đãi</h1>
+                                        <div class="open-full">
+                                            {% if story.status == 'Hoàn Thành' %}
+                                            <p>- Số chương còn lại bạn chưa mở là <b>{{unopened_chapters}} chương</b>, tương ứng là <b>{{total_money_unopened_chapters}} Linh Thạch</b>
+                                            </p>
+                                            <p>- Mở Full toàn bộ số chương này sẽ được giảm <b>20%</b>, tương ứng là
+                                                <b>{{total_money_sale}} Linh Thạch</b>
+                                            </p>
+                                            <style>
+                                                .modal-open-combo-vip{
+                                                    height: 440px;
+                                                }
+
+                                                @media (max-width: 575px){
+                                                    .modal-open-combo-vip{
+                                                        height: 516px;
+                                                    }
+                                                }
+                                            </style>
+                                            {% endif %}
+                                            <p>- Mở Combo từ 100 chương trở lên sẽ được giảm giá <b>20%</b> !</p>
+                                            <label>Từ Chương (STT)</label>
+                                            <input type="number" name="number_start" id="number_start">
+                                            <label>Đến Chương (STT)</label>
+                                            <input type="number" name="number_end" id="number_end">
+                                            <p>Hệ Thống sẽ tự động lọc những chương bạn đã mở</p>
+                                            <div>
+                                                <button id="link-open-combo">Mở Combo</button>
+                                                {% if story.status == 'Hoàn Thành' %}
+                                                <button onclick="open_full_vip({{total_money_sale}}, {{story.pk}}, {{chapter.pk}})">Mở Full</button>
+                                                {% endif %}
+                                            </div>
+                                            <p id="message-data-full"></p>
+                                        </div>
+                                        <div class="open-combo" style="display: none;">
+                                            <p>- Số chương sẽ mở: <b id="number_chapter_open">112</b></p>
+                                            <p>- Giá ban đầu: <b id="original_price">440 Linh Thạch</b></p>
+                                            <p id="sale_price"></p>
+                                            <input type="submit" data-story="{{story.id}}" data-chapter="{{chapter.slug}}" data-price="{{chapter.price}}" value="Thanh Toán" id="pay-money">
+                                            <button id="back">Quay lại</button>
+                                            <p id="message-data"></p>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="next-chapter">
+                            {% if chapter_prev != None %}
+                            <a href="{% url 'display_story' story.pk story.slug chapter_prev.slug chapter_prev.pk %}">
+                                <i class="fa-solid fa-chevron-left"></i>
+                                Chương Trước
+                            </a>
+                            {% else %}
+                            <span>
+                                <i class="fa-solid fa-chevron-left"></i>
+                                Chương Trước
+                            </span>
+                            {% endif %}
+                            {% if chapter_next != None %}
+                            <a href="{% url 'display_story' story.pk story.slug chapter_next.slug chapter_next.pk %}">
+                                Chương Tiếp
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </a>
+                            {% else %}
+                            <span>
+                                Chương Tiếp
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal" id="modal-list-chap" style="display: none;">
+                <div class="modal-overlay"></div>
+                <div class="modal-body__list-chapter" style="display: none;">
+                    <div class="icon-close">
+                        <span id="icon-close-1">
+                            <i class="fa-solid fa-xmark"></i>
+                        </span>
+                    </div>
+                    <div class="modal__list-chapter">
+                        <ul>
+                            {% for chapter in chapters %}
+                            <li class="modal__list-chapter__item">
+                                <a href="{% url 'display_story' story.pk story.slug chapter.id chapter.pk %}"
+                                    class="{% if chapter.slug in request.path %}act{% endif %}">Chương
+                                    {{chapter.chap_number}} : {{chapter.title}}</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <div class="modal-body__error-chapter" style="display: none;">
+                    <div class="icon-close">
+                        <span id="icon-close-2">
+                            <i class="fa-solid fa-xmark"></i>
+                        </span>
+                    </div>
+                    <div class="report-error-chapter">
+                        <h3>Báo Lỗi</h3>
+                        <textarea name="report" class="text-error" cols="30" rows="5"
+                            placeholder="Nhập nội dung"></textarea>
+                        <button onclick="reportError('{{story.title}}', '{{chapter.slug}}')" id="btn-report">Gửi</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="footer-bottom">
+                <div class="grid wide">
+                    <div class="footer-bottom-logo">
+                        <a class="bottom-logo" href="{% url 'home' %}">
+                            <img src="{% static 'images/log-rieng.png' %}" alt="">
+                        </a>
+                        <span>© 2007 Tàng Kinh Các</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

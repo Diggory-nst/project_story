@@ -1,0 +1,290 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- SEO -->
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index,follow" />
+    <meta name="googlebot" content="index,follow" />
+    <meta name="BingBOT" content="index,follow" />
+    <meta name="keywords" content="truyen dich, truyen kiem hiep, truyen ngon tinh, truyen full, truyen hoan thanh, truyen tien hiep, truyen lich su, truyen do thi"/>
+    <meta property="article:tag" content="doc truyen, doc truyen online, truyen hay, truyen full" />
+    <meta property="article:tag" content="kiem hiep, tien hiep, ngon tinh, do thi, huyen huyen, lich su" />
+    <meta property="article:tag" content="truyen dich, truyen ngon tinh, truyen sang tac" />
+
+    <link rel="canonical" href="https://tangkinhcac.vn/">
+    <meta property="og:title" content="Tàng Kinh Các - Thế Giới Truyện Tiên Hiệp Huyền Ảo" />
+    <meta property="og:description" content="Kho tàng truyện chữ Dịch online với nhiều thể loại Kiếm hiệp, Tiên hiệp, Sắc hiệp, Đô thị, Ngôn tình." />
+    <meta property="og:locale" content="vi_VN" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/images/logo_website_1.png" >
+    <meta property="og:image" content="https://ahrefs.com/blog/wp-content/uploads/2019/12/fb-how-to-become-an-seo-expert.png" />
+    <meta property="og:url" content="https://tangthuvien.vn/" />
+    <meta property="og:site_name" content="Tang Kinh Các" />
+
+    <title>Tàng Kinh Các - Thế Giới Truyện Dịch</title>
+    <meta name="description" content="Kho tàng truyện chữ Dịch online với nhiều thể loại Kiếm hiệp, Tiên hiệp, Sắc hiệp, Đô thị, Ngôn tình.">
+
+    <!-- END -->
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/grid_system.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home-page-new.css' %}">
+    <link rel="stylesheet" href="{% static 'css/filter.css' %}">
+    <link rel="stylesheet" href="{% static 'css/detail-story.css' %}">
+    <link rel="stylesheet" href="{% static 'css/personale-page.css' %}">
+    <link rel="stylesheet" href="{% static 'css/author-page.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive-author-page.css' %}">
+
+    <!-- Link Font -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+
+    <!-- Link JS -->
+    <script src="{% static 'js/base.js' %}" async></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+    <div class="author-page">
+        <header>
+            <a href="{% url 'home' %}">
+                <div class="cover-photo hidden-mobile" style="background-image: url({% static 'images/image-background/bg_11_cover.jpg' %}); background-repeat: no-repeat;"></div>
+            </a>
+            <div class="header-for-mobile" style="display: none;">
+                <a href="{% url 'home' %}">
+                    <img src="{% static 'images/text-TKC.png' %}" alt="">
+                </a>
+            </div>
+        </header>
+        <div class="container hidden-mobile">
+            <div class="grid wide">
+                <div class="row">
+                    <div class="author-info">
+                        <div class="info-author">
+                            <img src="{% static 'images/default-avatar.jpeg' %}" alt="">
+                            <span>{{story.author}}</span>
+                            <hr>
+                            <div>
+                                <a href="#" class="author-number-chap">
+                                    <i class="fa-solid fa-book"></i>
+                                    <span>{{stories.count}} Truyện</span>
+                                </a>
+                                <span>
+                                    <i class="fa-regular fa-user"></i>
+                                    <span>100 Yêu thích</span>
+                                </span>
+                            </div>
+
+                            <hr>
+                        </div>
+                        <div class="section-filtered-story">
+                            <div class="display-story">
+                                <div class="filtered-story">
+                                    <ul>
+                                        {% if stories %}
+                                        {% for story in stories %}
+                                        <li>
+                                            <img src="{{story.image.url}}" alt="">
+                                            <div class="filtered-story__info">
+                                                <a href="{% url 'display_info_story' story.pk story.slug %}">
+                                                    <h3>{{story.title}}</h3>
+                                                </a>
+                                                <div>
+                                                    <a class="filtered-story__info-author">{{story.author}}</a>
+                                                    <a href="{% url 'display_type' genres.0 %}" class="filtered-story__info-type">{{genres.0}}</a>
+                                                    <span class="filtered-story__info-status">{{story.status}}</span>
+                                                </div>
+                                                <div>
+                                                    <span class="filtered-story__info-chapter">{{story.number_of_chapter}} chương</span>
+                                                </div>
+                                                <p>{{story.description}}</p>
+                                                <div>
+                                                    <p>Cập Nhật: <span>2022-12-15 21:54:31</span></p>
+                                                    <span><a href="{% url 'display_info_story' story.pk story.slug %}">Chi
+                                                            tiết</a></span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        {% endfor %}
+                                        {% endif %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-for-mobile" style="display: none;">
+            <div class="author-info">
+                <div class="info-author">
+                    <img src="{% static 'images/default-avatar.jpeg' %}" alt="">
+                    <span>{{story.author}}</span>
+                    <div>
+                        <a href="#" class="author-number-chap">
+                            <span>Số Truyện</span>
+                            <span>{{stories.count}}</span>
+                        </a>
+                        <span>
+                            <span>Yêu Thích</span>
+                            <span>100</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="section-filtered-story">
+                    <div class="display-story">
+                        <div class="filtered-story">
+                            <ul>
+                                {% if stories %}
+                                {% for story in stories %}
+                                <li>
+                                    <a href="{% url 'display_info_story' story.pk story.slug %}">
+                                        <img src="{{story.image.url}}" alt="">
+                                        <div class="filtered-story__info">
+                                            <h3>{{story.title}}</h3>
+                                            <span>Tác Giả: {{story.author}}</span>
+                                            <span>Lượt Xem: {{story.number_of_views}}</span>
+                                            <span>Tình Trạng: {{story.status}}</span>
+                                            <span>Số Chương: {{story.number_of_chapter}}</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                {% endfor %}
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="footer hidden-tablet hidden-mobile">
+                <div class="grid wide">
+                    <div class="row">
+                        <div class="col xl-6 l-6" style="padding-left: 0;">
+                            <div class="introduce-about-web">
+                                <h4><i class="fa fa-info-circle"></i> Giới Thiệu</h4>
+                                <div>
+                                    Đọc truyện online, truyện chữ, truyen
+                                    full, truyện hay được đóng góp hoàn toàn bởi các thành
+                                    viên: dịch giả, tác giả, editor.. tâm huyết. Web truyen luôn cập nhật những bộ
+                                    truyện
+                                    mới thuộc các thể loại đặc sắc như ngôn tình,
+                                    tình cảm, đam mỹ, bách
+                                    hợp một cách nhanh nhất.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col xl-3 l-3">
+                            <div class="support">
+                                <h4><i class="fa fa-life-ring"></i> Hỗ Trợ</h4>
+                                <div class="people-support">
+                                    <p>
+                                        <span>Vấn đề khác:</span>
+                                        <i class="fa-brands fa-telegram"></i>
+                                        <a href="https://t.me/Diggory_24">Sỹ Thiện</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col xl-3 l-3" style="padding-right: 0;">
+                            <div class="contact">
+                                <h4><i class="fa fa-address-card"></i> Liên Hệ</h4>
+                                <div>
+                                    <p class="contact-type">
+                                        <span style="padding-right: 44px;">Email:</span>
+                                        <i class="fa fa-envelope-open"></i>
+                                        <span>truyen.tangkinhcac.vn@gmail.com</span>
+                                    </p>
+                                    <p class="contact-type">
+                                        <span style="padding-right: 17px;">Facebook:</span>
+                                        <i class="fa-brands fa-square-facebook"></i>
+                                        <a href="https://www.facebook.com/truyen.tangkinhcac.vn">Fb.com/tangkinhcac.vn</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-for-tablet" style="display: none;">
+                <div class="grid wide">
+                    <div class="row">
+                        <div class="col m-12" style="padding-left: 0; padding-right: 0;">
+                            <div class="introduce-about-web">
+                                <h4><i class="fa fa-info-circle"></i> Giới Thiệu</h4>
+                                <div>
+                                    Đọc truyện online, truyện chữ, truyen
+                                    full, truyện hay được đóng góp hoàn toàn bởi các thành
+                                    viên: dịch giả, tác giả, editor.. tâm huyết. Web truyen luôn cập nhật những bộ
+                                    truyện
+                                    mới thuộc các thể loại đặc sắc như ngôn tình,
+                                    tình cảm, đam mỹ, bách
+                                    hợp một cách nhanh nhất.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col m-6">
+                            <div class="support">
+                                <h4><i class="fa fa-life-ring"></i> Hỗ Trợ</h4>
+                                <div class="people-support">
+                                    <p>
+                                        <span>Vấn đề khác:</span>
+                                        <i class="fa-brands fa-telegram"></i>
+                                        <a href="https://t.me/Diggory_24">Sỹ Thiện</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col m-6" style="padding-right: 0;">
+                            <div class="contact">
+                                <h4><i class="fa fa-address-card"></i> Liên Hệ</h4>
+                                <div>
+                                    <p class="contact-type">
+                                        <span style="padding-right: 44px;">Email:</span>
+                                        <i class="fa fa-envelope-open"></i>
+                                        <span>truyen.tangkinhcac.vn@gmail.com</span>
+                                    </p>
+                                    <p class="contact-type">
+                                        <span style="padding-right: 17px;">Facebook:</span>
+                                        <i class="fa-brands fa-square-facebook"></i>
+                                        <a href="https://www.facebook.com/truyen.tangkinhcac.vn">Fb.com/tangkinhcac.vn</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom hidden-mobile">
+                <div class="grid wide">
+                    <div class="footer-bottom-logo">
+                        <a class="bottom-logo" href="{% url 'home' %}">
+                            <img src="{% static 'images/log-rieng.png' %}" alt="">
+                        </a>
+                        <span class="hidden-mobile">© 2007 Tàng Kinh Các</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+</body>
+
+</html>

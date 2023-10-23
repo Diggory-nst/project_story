@@ -1,0 +1,1161 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <!-- SEO -->
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index,follow" />
+    <meta name="googlebot" content="index,follow" />
+    <meta name="BingBOT" content="index,follow" />
+    <meta name="keywords" content="truyen dich, truyen kiem hiep, truyen ngon tinh, truyen full, truyen hoan thanh, truyen tien hiep, truyen lich su, truyen do thi"/>
+    <meta property="article:tag" content="doc truyen, doc truyen online, truyen hay, truyen full" />
+    <meta property="article:tag" content="kiem hiep, tien hiep, ngon tinh, do thi, huyen huyen, lich su" />
+    <meta property="article:tag" content="truyen dich, truyen ngon tinh, truyen sang tac" />
+
+    <link rel="canonical" href="https://tangkinhcac.vn/">
+    <meta property="og:title" content="Tàng Kinh Các - Thế Giới Truyện Tiên Hiệp Huyền Ảo" />
+    <meta property="og:description" content="Kho tàng truyện chữ Dịch online với nhiều thể loại Kiếm hiệp, Tiên hiệp, Sắc hiệp, Đô thị, Ngôn tình." />
+    <meta property="og:locale" content="vi_VN" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/images/logo_website_1.png" >
+    <meta property="og:image" content="https://ahrefs.com/blog/wp-content/uploads/2019/12/fb-how-to-become-an-seo-expert.png" />
+    <meta property="og:url" content="https://tangthuvien.vn/" />
+    <meta property="og:site_name" content="Tang Kinh Các" />
+
+    <title>Tàng Kinh Các - Thế Giới Truyện Dịch</title>
+    <meta name="description" content="Kho tàng truyện chữ Dịch online với nhiều thể loại Kiếm hiệp, Tiên hiệp, Sắc hiệp, Đô thị, Ngôn tình.">
+
+    <!-- END -->
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/grid_system.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home-page-new.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive-home-page.css' %}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" href="/favicon.ivg" type="image/svg+xml">
+
+    <!-- Link Font -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+
+    <!-- Link JS -->
+    <script src="{% static 'js/slideshow.js' %}" async></script>
+    <script src="{% static 'js/base-home-page.js' %}" async></script>
+    <script src="{% static 'js/search-story.js' %}" async></script>
+
+</head>
+
+<body>
+
+    <div class="web-page" style="background-image: url({% static 'images/background-body.png' %});">
+        <header class="header hidden-mobile">
+            <div class="grid wide">
+                <div class="row">
+                    <div class="header-search">
+                        <div class="section-logo">
+                            <a href="{% url 'home' %}">
+                                <img src="{% static 'images/log-rieng.png' %}" alt="">
+                                <div>
+                                    <img src="{% static 'images/text-TKC.png' %}" alt="">
+                                    <img src="{% static 'images/text-slogan.png' %}" alt="">
+                                </div>
+                            </a>
+                        </div>
+                        <div class="section-search">
+                            <input type="text" name="search" class="search" id="search-story"
+                                placeholder="Nhập tên truyện hoặc tác giả....">
+                            <button onclick="search_story()" class="icon-search"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        </div>
+                        <div class="section-account">
+                            {% if user.is_anonymous == True %}
+                            <div class="account-sign-in">
+                                <a href="{% url 'logIn' %}">
+                                    <i class="fa-regular fa-user"></i>
+                                    <span>Tài Khoản</span>
+                                </a>
+                            </div>
+                            {% else %}
+                            <div class="account">
+                                <a href="{% url 'my_account' %}">
+                                    <i class="fa-regular fa-address-book"></i>
+                                    <span><i>{{user.username}}</i></span>
+                                </a>
+                                <a href="{% url 'logOut' %}">
+                                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                </a>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="header-search-tablet">
+                        <div class="section-logo">
+                            <img src="{% static 'images/log-rieng.png' %}" alt="">
+                            <div>
+                                <img src="{% static 'images/text-TKC.png' %}" alt="">
+                                <img src="{% static 'images/text-slogan.png' %}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav class="header-navigation">
+                <div>
+                    <div class="header-category">
+                        <i class="fa-solid fa-bars"></i>
+                        <span>Thể Loại</span>
+                    </div>
+                    <div class="header-category-tablet">
+                        <i class="fa-solid fa-bars"></i>
+                        <span>Thể Loại</span>
+                    </div>
+                    <div class="header-navbar">
+                        <a href="{% url 'filter_story' %}"><span>Bộ Lọc</span></a>
+                        <a href="https://www.facebook.com/truyen.tangkinhcac.vn"><span>Reviews</span></a>
+                        <a><span>Cửa Hàng</span></a>
+                    </div>
+                    <div class="header-navbar-tablet" style="display: none;">
+                        <a href="#"><span>Bộ Lọc</span></a>
+                        <a href="https://www.facebook.com/truyen.tangkinhcac.vn"><span>Reviews</span></a>
+                        <a><span>Cửa Hàng</span></a>
+                        <span onclick="show_search_tablet()">Tìm Kiếm</span>
+                    </div>
+                    <div class="section-account-tablet" style="display: none;">
+                        {% if user.is_anonymous == True %}
+                        <div class="account-sign-in">
+                            <a href="{% url 'logIn' %}">
+                                <i class="fa-regular fa-user"></i>
+                                <span>Tài Khoản</span>
+                            </a>
+                        </div>
+                        {% else %}
+                        <div class="account">
+                            <a href="{% url 'my_account' %}">
+                                <i class="fa-regular fa-address-book"></i>
+                                <span><i>{{user.username}}</i></span>
+                            </a>
+                            <a href="{% url 'logOut' %}">
+                                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                            </a>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </nav>
+            <div class="section-search-mobile" style="display: none;">
+                <input type="text" name="search" class="search" id="search-story-tablet"
+                    placeholder="Nhập tên truyện hoặc tác giả....">
+                <button onclick="search_story_tablet()" class="icon-search"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+        </header>
+        <header class="header-for-mobile" style="display: none;">
+            <div class="section-logo">
+                <img src="{% static 'images/log-rieng.png' %}" alt="">
+                <div>
+                    <img src="{% static 'images/text-TKC.png' %}" alt="">
+                    <img src="{% static 'images/text-slogan.png' %}" alt="">
+                </div>
+            </div>
+        </header>
+        <div class="container hidden-mobile">
+            <div class="modal-category-tablet" style="display: none;">
+                <div class="modal-overlay"></div>
+                <div class="category-tablet">
+                    <dl>
+                        <dd>
+                            <a href="{% url 'display_type' 'Tiên Hiệp' %}" class="category-link">
+                                <img src="{% static 'images/icon-category/Tien-hiep-removebg.png' %}" alt="">
+                                <span class="category-info">
+                                    <i>Tiên Hiệp</i>
+                                    <b>{{th_genre}}</b>
+                                </span>
+                            </a>
+                        </dd>
+                        <dd>
+                            <a href="{% url 'display_type' 'Huyền Huyễn' %}" class="category-link">
+                                <img src="{% static 'images/icon-category/Huyen-huyen-remove.png' %}" alt="">
+                                <span class="category-info">
+                                    <i>Huyền Huyễn</i>
+                                    <b>{{hh_genre}}</b>
+                                </span>
+                            </a>
+                        </dd>
+                        <dd class="other-color">
+                            <a href="{% url 'display_type' 'Đô Thị' %}" class="category-link">
+                                <img src="{% static 'images/icon-category/Do-thi-remove.png' %}" alt="">
+                                <span class="category-info">
+                                    <i>Đô Thị</i>
+                                    <b>{{dt_genre}}</b>
+                                </span>
+                            </a>
+                        </dd>
+                        <dd class="other-color">
+                            <a href="{% url 'display_type' 'Khoa Huyễn' %}" class="category-link">
+                                <img src="{% static 'images/icon-category/Khoa-huyen-remove.png' %}" alt="">
+                                <span class="category-info">
+                                    <i>Khoa Huyễn</i>
+                                    <b>{{khh_genre}}</b>
+                                </span>
+                            </a>
+                        </dd>
+                        <dd>
+                            <a href="{% url 'display_type' 'Kỳ Huyễn' %}" class="category-link">
+                                <img src="{% static 'images/icon-category/ky-huyen-remove.png' %}" alt="">
+                                <span class="category-info">
+                                    <i>Kỳ Huyễn</i>
+                                    <b>{{kyh_genre}}</b>
+                                </span>
+                            </a>
+                        </dd>
+                        <dd>
+                            <a href="{% url 'display_type' 'Võ Hiệp' %}" class="category-link">
+                                <img src="{% static 'images/icon-category/ky-huyen-remove.png' %}" alt="">
+                                <span class="category-info">
+                                    <i>Võ Hiệp</i>
+                                    <b>{{vh_genre}}</b>
+                                </span>
+                            </a>
+                        </dd>
+                        <dd class="other-color">
+                            <a href="{% url 'display_type' 'Lịch Sử' %}" class="category-link">
+                                <img src="{% static 'images/icon-category/ky-huyen-remove.png' %}" alt="">
+                                <span class="category-info">
+                                    <i>Lịch Sử</i>
+                                    <b>{{ls_genre}}</b>
+                                </span>
+                            </a>
+                        </dd>
+                        <dd class="other-color">
+                            <a href="{% url 'display_type' 'Ngôn Tình' %}" class="category-link">
+                                <img src="{% static 'images/icon-category/ky-huyen-remove.png' %}" alt="">
+                                <span class="category-info">
+                                    <i>Ngôn Tình</i>
+                                    <b>{{nt_genre}}</b>
+                                </span>
+                            </a>
+                        </dd>
+                        <dd>
+                            <a href="{% url 'display_type' 'Sắc' %}" class="category-link">
+                                <img src="{% static 'images/icon-category/Khoa-huyen-remove.png' %}" alt="">
+                                <span class="category-info">
+                                    <i>Sắc</i>
+                                    <b>{{s_genre}}</b>
+                                </span>
+                            </a>
+                        </dd>
+                        <dd>
+                            <a href="{% url 'display_type' 'Cạnh Kỹ' %}" class="category-link">
+                                <img src="{% static 'images/icon-category/ky-huyen-remove.png' %}" alt="">
+                                <span class="category-info">
+                                    <i>Cạnh KỸ</i>
+                                    <b>{{ck_genre}}</b>
+                                </span>
+                            </a>
+                        </dd>
+                        <dd class="other-color">
+                            <a href="{% url 'display_type' 'Quân Sự' %}" class="category-link">
+                                <img src="{% static 'images/icon-category/ky-huyen-remove.png' %}" alt="">
+                                <span class="category-info">
+                                    <i>Quân Sự</i>
+                                    <b>{{qs_genre}}</b>
+                                </span>
+                            </a>
+                        </dd>
+                        <dd class="other-color">
+                            <a href="{% url 'display_type' 'Du Hí' %}" class="category-link">
+                                <img src="{% static 'images/icon-category/ky-huyen-remove.png' %}" alt="">
+                                <span class="category-info">
+                                    <i>Du Hí</i>
+                                    <b>{{dh_genre}}</b>
+                                </span>
+                            </a>
+                        </dd>
+                        <dd>
+                            <a href="{% url 'display_type' 'Linh Dị' %}" class="category-link">
+                                <img src="{% static 'images/icon-category/ky-huyen-remove.png' %}" alt="">
+                                <span class="category-info">
+                                    <i>Linh Dị</i>
+                                    <b>{{ld_genre}}</b>
+                                </span>
+                            </a>
+                        </dd>
+                        <dd>
+                            <a href="{% url 'display_type' 'Tất Cả' %}" class="category-link">
+                                <img src="{% static 'images/icon-category/ky-huyen-remove.png' %}" alt="">
+                                <span class="category-info">
+                                    <i>Tất Cả</i>
+                                    <b>{{tc_genre}}</b>
+                                </span>
+                            </a>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="grid wide">
+                <div class="row">
+                    <div class="section__category">
+                        <div class="category hidden-tablet">
+                            <dl>
+                                <dd>
+                                    <a href="{% url 'display_type' 'Tiên Hiệp' %}" class="category-link">
+                                        <img src="{% static 'images/icon-category/Tien-hiep-removebg.png' %}" alt="">
+                                        <span class="category-info">
+                                            <i>Tiên Hiệp</i>
+                                            <b>{{th_genre}}</b>
+                                        </span>
+                                    </a>
+                                </dd>
+                                <dd>
+                                    <a href="{% url 'display_type' 'Huyền Huyễn' %}" class="category-link">
+                                        <img src="{% static 'images/icon-category/Huyen-huyen-remove.png' %}" alt="">
+                                        <span class="category-info">
+                                            <i>Huyền Huyễn</i>
+                                            <b>{{hh_genre}}</b>
+                                        </span>
+                                    </a>
+                                </dd>
+                                <dd class="other-color">
+                                    <a href="{% url 'display_type' 'Đô Thị' %}" class="category-link">
+                                        <img src="{% static 'images/icon-category/Do-thi-remove.png' %}" alt="">
+                                        <span class="category-info">
+                                            <i>Đô Thị</i>
+                                            <b>{{dt_genre}}</b>
+                                        </span>
+                                    </a>
+                                </dd>
+                                <dd class="other-color">
+                                    <a href="{% url 'display_type' 'Khoa Huyễn' %}" class="category-link">
+                                        <img src="{% static 'images/icon-category/Khoa-huyen-remove.png' %}" alt="">
+                                        <span class="category-info">
+                                            <i>Khoa Huyễn</i>
+                                            <b>{{khh_genre}}</b>
+                                        </span>
+                                    </a>
+                                </dd>
+                                <dd>
+                                    <a href="{% url 'display_type' 'Kỳ Huyễn' %}" class="category-link">
+                                        <img src="{% static 'images/icon-category/ky-huyen-remove.png' %}" alt="">
+                                        <span class="category-info">
+                                            <i>Kỳ Huyễn</i>
+                                            <b>{{kyh_genre}}</b>
+                                        </span>
+                                    </a>
+                                </dd>
+                                <dd>
+                                    <a href="{% url 'display_type' 'Võ Hiệp' %}" class="category-link">
+                                        <img src="{% static 'images/icon-category/ky-huyen-remove.png' %}" alt="">
+                                        <span class="category-info">
+                                            <i>Võ Hiệp</i>
+                                            <b>{{vh_genre}}</b>
+                                        </span>
+                                    </a>
+                                </dd>
+                                <dd class="other-color">
+                                    <a href="{% url 'display_type' 'Lịch Sử' %}" class="category-link">
+                                        <img src="{% static 'images/icon-category/ky-huyen-remove.png' %}" alt="">
+                                        <span class="category-info">
+                                            <i>Lịch Sử</i>
+                                            <b>{{ls_genre}}</b>
+                                        </span>
+                                    </a>
+                                </dd>
+                                <dd class="other-color">
+                                    <a href="{% url 'display_type' 'Ngôn Tình' %}" class="category-link">
+                                        <img src="{% static 'images/icon-category/ky-huyen-remove.png' %}" alt="">
+                                        <span class="category-info">
+                                            <i>Ngôn Tình</i>
+                                            <b>{{nt_genre}}</b>
+                                        </span>
+                                    </a>
+                                </dd>
+                                <dd>
+                                    <a href="{% url 'display_type' 'Sắc' %}" class="category-link">
+                                        <img src="{% static 'images/icon-category/Khoa-huyen-remove.png' %}" alt="">
+                                        <span class="category-info">
+                                            <i>Sắc</i>
+                                            <b>{{s_genre}}</b>
+                                        </span>
+                                    </a>
+                                </dd>
+                                <dd>
+                                    <a href="{% url 'display_type' 'Cạnh Kỹ' %}" class="category-link">
+                                        <img src="{% static 'images/icon-category/ky-huyen-remove.png' %}" alt="">
+                                        <span class="category-info">
+                                            <i>Cạnh Kỹ</i>
+                                            <b>{{ck_genre}}</b>
+                                        </span>
+                                    </a>
+                                </dd>
+                                <dd class="other-color">
+                                    <a href="{% url 'display_type' 'Quân Sự' %}" class="category-link">
+                                        <img src="{% static 'images/icon-category/ky-huyen-remove.png' %}" alt="">
+                                        <span class="category-info">
+                                            <i>Quân Sự</i>
+                                            <b>{{qs_genre}}</b>
+                                        </span>
+                                    </a>
+                                </dd>
+                                <dd class="other-color">
+                                    <a href="{% url 'display_type' 'Du Hí' %}" class="category-link">
+                                        <img src="{% static 'images/icon-category/ky-huyen-remove.png' %}" alt="">
+                                        <span class="category-info">
+                                            <i>Du Hí</i>
+                                            <b>{{dh_genre}}</b>
+                                        </span>
+                                    </a>
+                                </dd>
+                                <dd>
+                                    <a href="{% url 'display_type' 'Linh Dị' %}" class="category-link">
+                                        <img src="{% static 'images/icon-category/ky-huyen-remove.png' %}" alt="">
+                                        <span class="category-info">
+                                            <i>Linh Dị</i>
+                                            <b>{{ld_genre}}</b>
+                                        </span>
+                                    </a>
+                                </dd>
+                                <dd>
+                                    <a href="{% url 'display_type' 'Tất Cả' %}" class="category-link">
+                                        <img src="{% static 'images/icon-category/ky-huyen-remove.png' %}" alt="">
+                                        <span class="category-info">
+                                            <i>Tất Cả</i>
+                                            <b>{{tc_genre}}</b>
+                                        </span>
+                                    </a>
+                                </dd>
+                            </dl>
+                        </div>
+
+                        <!-- Slideshow Hot Story -->
+
+                        <div class="slideshow">
+                            <div class="sls-wrapper">
+                                {% for storySlide in stories_slide %}
+                                <div class="slide slide-{{forloop.counter0}}" data-index="{{ forloop.counter0 }}"
+                                    style="background-image: url({{storySlide.image.url}});">
+                                </div>
+                                {% endfor %}
+                            </div>
+                            <div class="sls-des">
+                                {% for storySlide in stories_slide %}
+                                <div class="des-wrap item-{{forloop.counter}}">
+                                    <h3>{{storySlide.title}}</h3>
+                                    <p>{{storySlide.description}}</p>
+                                    <a href="{% url 'display_info_story' storySlide.pk storySlide.slug %}">Đọc Truyện</a>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <!-- Slideshow Hot Story End-->
+
+                        <div class="vote-story hidden-tablet">
+                            <h1>Vote Truyện Cần Dịch</h1>
+                            <div class="text-add-story" id="text-add-story-laptop" style="display: none;">
+                                <input type="text" name="" id="text-vote-story-laptop">
+                                <span id="btn-add-story-laptop">Thêm</span>
+                            </div>
+                            {% if vote_stories.count < 5 %}
+                            <div class="add-story" id="add-story-laptop">
+                                <div>
+                                    <i class="fa-regular fa-plus"></i>
+                                    <span>Thêm Truyện</span>
+                                </div>
+                            </div>
+                            {% endif %}
+                            <div id="list-nameStory-vote-laptop">
+                                {% if vote_stories != None %}
+                                {% if condition %}
+                                <style>
+                                    #list-nameStory-vote-laptop{
+                                        margin-top: 30px;
+                                    }
+                                </style>
+                                {% for vote_story in vote_stories %}
+                                <div class="vote-story__info">
+                                    <span class="name-vote">{{vote_story.name_story}}</span>
+                                    <span class="vote" data-pk="{{vote_story.id}}">{{vote_story.number_vote}}</span>
+                                </div>
+                                {% endfor %}
+                                {% else %}
+                                <style>
+                                    #list-nameStory-vote-laptop{
+                                        margin-top: 30px;
+                                    }
+                                </style>
+                                {% for vote_story in vote_stories %}
+                                <div class="vote-story__info">
+                                    <span class="name-vote">{{vote_story.name_story}}</span>
+                                    <span class="vote" onclick="voteStoryLap({{vote_story.id}})" data-pk="{{vote_story.id}}" id="{{vote_story.id}}">Vote</span>
+                                </div>
+                                {% endfor %}
+                                {% endif %}
+                                {% endif %}
+                            </div>
+                            <p class="text-error-laptop">( Truyện Sẽ Được Cập Nhật Và Đóng Vote Vào Mỗi Thứ 7. )</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row section__banner hidden-tablet">
+                    <div class="banner">
+                        <div class="tutorial-posting">
+                            <big class="tp-title">Bạn muốn đăng truyện lên Tangthuvien?</big>
+                            <p class="tp-description">Chúng tôi sẵn sàng hỗ trợ bạn bất cứ lúc nào. Hãy nhấn vào lựa
+                                chọn bên dưới.</p>
+                            <p class="tp-guide">
+                                <a href="#">Hướng Dẫn Đăng Truyện</a>
+                                <a href="#">Trung Tâm Xuất Bản</a>
+                            </p>
+                            <p>( Cần đăng nhập để xem thông tin)</p>
+                        </div>
+
+                        <div class="banner-event">
+                            <img src="{% static 'images/banne_exp.jpg' %}" alt="">
+                        </div>
+                        <div class="news-system">
+                            <p>TIN TỨC</p>
+                            {% if number_news == 0 %}
+                            <div class="no-news">
+                                <p>Không Có Tin Tức Nào</p>
+                            </div>
+                            {% else %}
+                            {% for new in news %}
+                            <ul>
+                                <li>
+                                    <a href="{{new.link_face}}">{{new.content}}</a>
+                                </li>
+                            </ul>
+                            {% endfor %}
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="banner-tablet">
+                        <img src="{% static 'images/banne_exp.jpg' %}" alt="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="section-for-tablet" style="display: none;">
+                        <div class="nominated-story">
+                            <div class="nominated-title">
+                                <span>Đề Cử</span>
+                            </div>
+                            <ul>
+                                <li>
+                                    <div class="nominated-story__no-1">
+                                        <div class="nominated-story__info">
+                                            <div>NO.1</div>
+                                            <a href="{% url 'display_info_story' story_most_viewed.pk story_most_viewed.slug %}">
+                                                <span>{{story_most_viewed.title}}</span>
+                                            </a>
+                                            <span>{{story_most_viewed.number_of_chapter}} Chương</span>
+                                            <div>
+                                                <a href="#" class="story-info__type">{{genres_most_viewed}}</a>
+                                                <a href="{% url 'author' story_most_viewed.author %}" class="story-info__author">{{story_most_viewed.author}}</a>
+                                            </div>
+                                        </div>
+                                        <img src="{{story_most_viewed.image.url}}" alt="">
+                                    </div>
+                                </li>
+                                {% for story in stories_nominated_tablet %}
+                                <li>
+                                    <div class="nominated-story__no no-{{forloop.counter|add:1}}">
+                                        <div class="num-box">{{forloop.counter|add:1}}</div>
+                                        <div class="name-box">
+                                            <a href="{% url 'display_info_story' story.pk story.slug %}">{{story.title}}</a>
+                                            <span>{{story.number_of_chapter}} Chương</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div class="vote-story">
+                            <h1>Vote Truyện Cần Dịch</h1>
+                            <div class="text-add-story" id="text-add-story-tablet" style="display: none;">
+                                <input type="text" name="" id="text-vote-story-tablet">
+                                <span id="btn-add-story-tablet">Thêm</span>
+                            </div>
+                            {% if vote_stories.count < 5 %}
+                            <div class="add-story" id="add-story-tablet">
+                                <div>
+                                    <i class="fa-regular fa-plus"></i>
+                                    <span>Thêm Truyện</span>
+                                </div>
+                            </div>
+                            {% endif %}
+                            <div id="list-nameStory-vote-tablet">
+                                {% if vote_stories != None %}
+                                {% if condition %}
+                                <style>
+                                    #list-nameStory-vote-tablet{
+                                        margin-top: 30px;
+                                    }
+                                </style>
+                                {% for vote_story in vote_stories %}
+                                <div class="vote-story__info">
+                                    <span class="name-vote">{{vote_story.name_story}}</span>
+                                    <span class="vote" data-pk="{{vote_story.id}}">{{vote_story.number_vote}}</span>
+                                </div>
+                                {% endfor %}
+                                {% else %}
+                                <style>
+                                    #list-nameStory-vote-tablet{
+                                        margin-top: 30px;
+                                    }
+                                </style>
+                                {% for vote_story in vote_stories %}
+                                <div class="vote-story__info">
+                                    <span class="name-vote">{{vote_story.name_story}}</span>
+                                    <span class="vote" onclick="voteStoryTab({{vote_story.id}})" data-pk="{{vote_story.id}}" id="{{vote_story.id}}">Vote</span>
+                                </div>
+                                {% endfor %}
+                                {% endif %}
+                                {% endif %}
+                            </div>
+                            <p class="text-error-tablet">( Truyện Sẽ Được Cập Nhật Và Đóng Vote Vào Mỗi Thứ 7. )</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row section__thanks"></div>
+                <div class="section__stories">
+                    <div class="row">
+                        <div class="col xl-9 l-8" style="padding-left: 0;">
+                            <div class="new-story">
+                                <span>Truyện Mới</span>
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </div>
+                            <div class="row">
+                                <div class="new-story_body">
+                                    <div class="new-story-left">
+                                        <div class="new-story-left__image">
+                                            <a href="{% url 'display_info_story' new_story.pk new_story.slug %}">
+                                                <img src="{{new_story.image.url}}">
+                                            </a>
+                                        </div>
+                                        <a href="{% url 'display_info_story' new_story.pk new_story.slug %}">
+                                            <h3 class="new-story-left__name">{{new_story.title}}</h3>
+                                        </a>
+                                        <a href="{% url 'author' new_story.author %}">
+                                            <h3 class="new-story-left__author">{{new_story.author}}</h3>
+                                        </a>
+                                        <h4 class="new-story-left__chapter">{{new_story.number_of_chapter}} Chương</h4>
+                                        <p class="new-story-left__description">{{new_story.description}}</p>
+                                    </div>
+                                    <div class="new-story-right">
+                                        <div class="row">
+                                            {% for story, genre in zip_stories_new %}
+                                            <div class="col xl-6 l-6 m-12 new-story-item__fix">
+                                                <div class="new-story-item">
+                                                    <div class="new-story-item__image">
+                                                        <a href="{% url 'display_info_story' story.pk story.slug %}">
+                                                            <img src="{{story.image.url}}">
+                                                        </a>
+                                                    </div>
+                                                    <div class="new-story-item_body">
+                                                        <a href="{% url 'display_info_story' story.pk story.slug %}">
+                                                            <h3 class="new-story-item__name">{{story.title}}</h3>
+                                                        </a>
+                                                        <p class="new-story-item__description">{{story.description}}</p>
+                                                        <div class="new-story-item__author">
+                                                            <a href="{% url 'author' story.author %}">
+                                                                <h3>{{story.author}}</h3>
+                                                            </a>
+                                                            <a href="{% url 'display_type' genre %}">
+                                                                <h3>{{genre}}</h3>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col xl-3 l-4" style="padding-right: 0;">
+                            <div class="nominated-title hidden-tablet">
+                                <span>Đề Cử</span>
+                            </div>
+                            <div class="nominated-story hidden-tablet">
+                                <ul>
+                                    <li>
+                                        <div class="nominated-story__no-1">
+                                            <div class="nominated-story__info">
+                                                <div>NO.1</div>
+                                                <a href="{% url 'display_info_story' story_most_viewed.pk story_most_viewed.slug %}">
+                                                    <span>{{story_most_viewed.title}}</span>
+                                                </a>
+                                                <span>{{story_most_viewed.number_of_chapter}} Chương</span>
+                                                <div>
+                                                    <a href="#" class="story-info__type">{{genres_most_viewed}}</a>
+                                                    <a href="{% url 'author' story_most_viewed.author %}" class="story-info__author">{{story_most_viewed.author}}</a>
+                                                </div>
+                                            </div>
+                                            <img src="{{story_most_viewed.image.url}}" alt="">
+                                        </div>
+                                    </li>
+                                    {% for story in stories_nominated %}
+                                    <li>
+                                        <div class="nominated-story__no no-{{forloop.counter|add:1}}">
+                                            <div class="num-box">{{forloop.counter|add:1}}</div>
+                                            <div class="name-box">
+                                                <a href="{% url 'display_info_story' story.pk story.slug %}">{{story.title}}</a>
+                                                <span>{{story.number_of_chapter}} Chương</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section__story-full">
+                    <div class="new-full">
+                        <span>Mới Hoàn Thành</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                    <div class="row">
+                        {% for story, genre in zip_stories_full %}
+                        <div class="col xl-3 l-4 m-6" style="padding: 0;">
+                            <div class="story-full">
+                                <div class="story-full__img">
+                                    <a href="{% url 'display_info_story' story.pk story.slug %}">
+                                        <img src="{{story.image.url}}" alt="">
+                                    </a>
+                                </div>
+                                <div class="story-full__info">
+                                    <span class="story-full__info-name">
+                                        <a href="{% url 'display_info_story' story.pk story.slug %}">{{story.title}}</a>
+                                    </span>
+                                    <div>
+                                        <a href="{% url 'author' story.author %}" class="story-full__info-author">{{story.author}}</a>
+                                        <a href="{% url 'display_type' genre %}" class="label-type">{{genre}}</a>
+                                    </div>
+                                    <span class="story-full__info-chap">{{story.number_of_chapter}} Chương</span>
+                                    <p class="story-full__info-description">{{story.description}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-category-mobile" style="display: none;">
+            <div class="modal-overlay"></div>
+            <div class="category">
+                <span>
+                    <i class="fa-solid fa-xmark"></i>
+                </span>
+                <dl>
+                    <dd>
+                        <a href="#">Tiên Hiệp</a>
+                    </dd>
+                    <dd>
+                        <a href="#">Huyền Huyễn</a>
+                    </dd>
+                    <dd>
+                        <a href="#">Đô Thị</a>
+                    </dd>
+                    <dd>
+                        <a href="#">Khoa Huyễn</a>
+                    </dd>
+                    <dd>
+                        <a href="#">Kỳ Huyễn</a>
+                    </dd>
+                    <dd>
+                        <a href="#">Võ Hiệp</a>
+                    </dd>
+                    <dd>
+                        <a href="#">Lịch Sử</a>
+                    </dd>
+                    <dd>
+                        <a href="#">Đồng Nhân</a>
+                    </dd>
+                    <dd>
+                        <a href="#">Quân Sự</a>
+                    </dd>
+                    <dd>
+                        <a href="#">Du Hí</a>
+                    </dd>
+                    <dd>
+                        <a href="#">Cạnh Kỹ</a>
+                    </dd>
+                    <dd>
+                        <a href="#">Linh Dị</a>
+                    </dd>
+                    <dd>
+                        <a href="#">Ngôn Tình</a>
+                    </dd>
+                    <dd>
+                        <a href="#">Tất Cả</a>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="container-for-mobile" style="display: none;">
+            <div>
+                <div class="section-search">
+                    <input type="text" name="search" class="search" id="search-story-mobile" placeholder="Tìm Kiếm">
+                    <span class="icon-search" onclick="search_story_mob()"><i class="fa-solid fa-magnifying-glass"></i></span>
+                </div>
+                <div class="section-account-mobile" style="display: none;">
+                    {% if user.is_anonymous == True %}
+                    <div class="account-sign-in">
+                        <a href="{% url 'logIn' %}">
+                            <i class="fa-regular fa-user"></i>
+                            <span>Tài Khoản</span>
+                        </a>
+                    </div>
+                    {% else %}
+                    <div class="account">
+                        <a href="{% url 'my_account' %}">
+                            <i class="fa-regular fa-address-book"></i>
+                            <span><i>{{user.username}}</i></span>
+                        </a>
+                        <a href="{% url 'logOut' %}">
+                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        </a>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            <nav class="header-navigation">
+                <div>
+                    <div class="header-category">
+                        <i class="fa-solid fa-bars"></i>
+                        <span>Thể Loại</span>
+                    </div>
+                    <div class="header-navbar">
+                        <a href="{% url 'filter_story' %}"><span>Bộ Lọc</span></a>
+                        <a href="https://www.facebook.com/truyen.tangkinhcac.vn"><span>Reviews</span></a>
+                        <a><span>Cửa Hàng</span></a>
+                    </div>
+                    <div class="header-navbar-tablet" style="display: none;">
+                        <a href="#"><span>Bộ Lọc</span></a>
+                        <a href="https://www.facebook.com/truyen.tangkinhcac.vn"><span>Reviews</span></a>
+                        <a><span>Cửa Hàng</span></a>
+                        <span>Tìm Kiếm</span>
+                    </div>
+                    <div class="account tablet" style="display: none;">
+                        <a href="#" class="disable-hover">
+                            <i class="fa-regular fa-address-book"></i>
+                            <span><i>tony123</i></span>
+                        </a>
+                        <a href="{% url 'logOut' %}">
+                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+            <div>
+                <!-- Slideshow Hot Story -->
+
+                <div class="slideshowMobile">
+                    <div class="sls-wrapper-mobile">
+                        {% for storySlide in stories_slide %}
+                        <div class="slideMobile" data-index="{{ forloop.counter0 }}"
+                            style="background-image: url({{storySlide.image.url}});">
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="sls-des-mobile">
+                        {% for storySlide in stories_slide %}
+                        <div class="des-wrap-mobile item-{{forloop.counter}}">
+                            <h3>{{storySlide.title}}</h3>
+                            <p>{{storySlide.description}}</p>
+                            <a href="{% url 'display_info_story' storySlide.pk storySlide.slug %}">Đọc Truyện</a>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <!-- Slideshow Hot Story End-->
+            </div>
+            <div class="list-nominated-story">
+                <div>
+                    <span>Truyện Đề Cử</span>
+                </div>
+                <ul>
+                    {% for story, genre in zip_nominated_mobile %}
+                    <li>
+                        <a href="{% url 'display_info_story' story.pk story.slug %}">
+                            <img src="{{story.image.url}}">
+                            <div class="list-nominated__info">
+                                <h3>{{story.title}}</h3>
+                                <span>Tác Giả: {{story.author}}</span>
+                                <span>Thể Loại: {{genre}}</span>
+                                <span>Lượt Xem: {{story.number_of_views}}</span>
+                                <span>Tình Trạng: {{story.status}}</span>
+                                <span>Số Chương: {{story.number_of_chapter}}</span>
+                            </div>
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="new-story-mobile">
+                <div>
+                    <span>Truyện Mới</span>
+                </div>
+                <ul>
+                    {% for story, genre in zip_stories_new_mob %}
+                    <li>
+                        <a href="{% url 'display_info_story' story.pk story.slug %}">
+                            <img src="{{story.image.url}}">
+                            <div class="new-story-mobile__info">
+                                <h3>{{story.title}}</h3>
+                                <span>Tác Giả: {{story.author}}</span>
+                                <span>Thể Loại: {{genre}}</span>
+                                <span>Lượt Xem: {{story.number_of_views}}</span>
+                                <span>Số Chương: {{story.number_of_chapter}}</span>
+                            </div>
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="completed-story">
+                <div>
+                    <span>Truyện Đã Hoàn Thành</span>
+                </div>
+                <ul>
+                    {% for story, genre in zip_stories_full_mob %}
+                    <li>
+                        <a href="{% url 'display_info_story' story.pk story.slug %}">
+                            <img src="{{story.image.url}}" alt="">
+                            <div class="completed-story__info">
+                                <h3>{{story.title}}</h3>
+                                <span>Tác Giả: {{story.author}}</span>
+                                <span>Thể Loại: {{genre}}</span>
+                                <span>Lượt Xem: {{story.number_of_views}}</span>
+                                <span>Số Chương: {{story.number_of_chapter}}</span>
+                            </div>
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="vote-story">
+                <h1>Vote Truyện Cần Dịch</h1>
+                <div class="text-add-story" id="text-add-story-mobile" style="display: none;">
+                    <input type="text" name="" id="text-vote-story-mobile">
+                    <span id="btn-add-story-mobile">Thêm</span>
+                </div>
+                {% if vote_stories.count < 5 %}
+                <div class="add-story" id="add-story-mobile">
+                    <div>
+                        <i class="fa-regular fa-plus"></i>
+                        <span>Thêm Truyện</span>
+                    </div>
+                </div>
+                {% endif %}
+                <div id="list-nameStory-vote-mobile">
+                    {% if vote_stories != None %}
+                    {% if condition %}
+                    {% for vote_story in vote_stories %}
+                    <div class="vote-story__info">
+                        <span class="name-vote">{{vote_story.name_story}}</span>
+                        <span class="vote" data-pk="{{vote_story.id}}">{{vote_story.number_vote}}</span>
+                    </div>
+                    {% endfor %}
+                    {% else %}
+                    {% for vote_story in vote_stories %}
+                    <div class="vote-story__info">
+                        <span class="name-vote">{{vote_story.name_story}}</span>
+                        <span class="vote" onclick="voteStoryMob({{vote_story.id}})" data-pk="{{vote_story.id}}" id="{{vote_story.id}}">Vote</span>
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+                    {% endif %}
+                </div>
+                <p class="text-error-mobile">( Truyện Sẽ Được Cập Nhật Và Đóng Vote Vào Mỗi Thứ 7. )</p>
+            </div>
+        </div>
+        <footer>
+            <div class="footer hidden-tablet hidden-mobile">
+                <div class="grid wide">
+                    <div class="row">
+                        <div class="col xl-6 l-6" style="padding-left: 0;">
+                            <div class="introduce-about-web">
+                                <h4><i class="fa fa-info-circle"></i> Giới Thiệu</h4>
+                                <div>
+                                    Đọc truyện online, truyện chữ, truyen
+                                    full, truyện hay được đóng góp hoàn toàn bởi các thành
+                                    viên: dịch giả, tác giả, editor.. tâm huyết. Web truyen luôn cập nhật những bộ
+                                    truyện
+                                    mới thuộc các thể loại đặc sắc như ngôn tình,
+                                    tình cảm, đam mỹ, bách
+                                    hợp một cách nhanh nhất.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col xl-2 l-2">
+                            <div class="support">
+                                <h4><i class="fa fa-life-ring"></i> Hỗ Trợ</h4>
+                                <div class="people-support">
+                                    <p>
+                                        <span>Vấn đề khác:</span>
+                                        <i class="fa-brands fa-telegram"></i>
+                                        <a href="https://t.me/Diggory_24">Sỹ Thiện</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col xl-4 l-4" style="padding-right: 0;">
+                            <div class="contact">
+                                <h4><i class="fa fa-address-card"></i> Liên Hệ</h4>
+                                <div>
+                                    <p class="contact-type">
+                                        <span style="padding-right: 44px;">Email:</span>
+                                        <i class="fa fa-envelope-open"></i>
+                                        <span>truyen.tangkinhcac.vn@gmail.com</span>
+                                    </p>
+                                    <p class="contact-type">
+                                        <span style="padding-right: 17px;">Facebook:</span>
+                                        <i class="fa-brands fa-square-facebook"></i>
+                                        <a href="https://www.facebook.com/truyen.tangkinhcac.vn">Fb.com/tangkinhcac.vn</a>
+                                    </p>
+                                    <p class="contact-type">
+                                        <span style="padding-right: 17px;">Group Facebook:</span>
+                                        <i class="fa-brands fa-square-facebook"></i>
+                                        <a href="https://www.facebook.com/groups/tangkinhcac.thegioitruyendich">Fb.com/groups/tangkinhcac</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-for-tablet" style="display: none;">
+                <div class="grid wide">
+                    <div class="row">
+                        <div class="col m-12" style="padding-left: 0; padding-right: 0;">
+                            <div class="introduce-about-web">
+                                <h4><i class="fa fa-info-circle"></i> Giới Thiệu</h4>
+                                <div>
+                                    Đọc truyện online, truyện chữ, truyen
+                                    full, truyện hay được đóng góp hoàn toàn bởi các thành
+                                    viên: dịch giả, tác giả, editor.. tâm huyết. Web truyen luôn cập nhật những bộ
+                                    truyện
+                                    mới thuộc các thể loại đặc sắc như ngôn tình,
+                                    tình cảm, đam mỹ, bách
+                                    hợp một cách nhanh nhất.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col m-5">
+                            <div class="support">
+                                <h4><i class="fa fa-life-ring"></i> Hỗ Trợ</h4>
+                                <div class="people-support">
+                                    <p>
+                                        <span>Vấn đề khác:</span>
+                                        <i class="fa-brands fa-telegram"></i>
+                                        <a href="https://t.me/Diggory_24">Sỹ Thiện</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col m-7" style="padding-right: 0;">
+                            <div class="contact">
+                                <h4><i class="fa fa-address-card"></i> Liên Hệ</h4>
+                                <div>
+                                    <p class="contact-type">
+                                        <span style="padding-right: 44px;">Email:</span>
+                                        <i class="fa fa-envelope-open"></i>
+                                        <span>truyen.tangkinhcac.vn@gmail.com</span>
+                                    </p>
+                                    <p class="contact-type">
+                                        <span style="padding-right: 17px;">Facebook:</span>
+                                        <i class="fa-brands fa-square-facebook"></i>
+                                        <a href="https://www.facebook.com/truyen.tangkinhcac.vn">Fb.com/tangkinhcac.vn</a>
+                                    </p>
+                                    <p class="contact-type">
+                                        <span style="padding-right: 17px;">Group Facebook:</span>
+                                        <i class="fa-brands fa-square-facebook"></i>
+                                        <a href="https://www.facebook.com/groups/tangkinhcac.thegioitruyendich">Fb.com/groups/tangkinhcac/</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-for-mobile">
+                <div class="introduce-about-web">
+                    <h4><i class="fa fa-info-circle"></i> Giới Thiệu</h4>
+                    <div>
+                        Đọc truyện online, truyện chữ, truyen
+                        full, truyện hay được đóng góp hoàn toàn bởi các thành
+                        viên: dịch giả, tác giả, editor.. tâm huyết. Web truyen luôn cập nhật những bộ
+                        truyện
+                        mới thuộc các thể loại đặc sắc như ngôn tình,
+                        tình cảm, đam mỹ, bách
+                        hợp một cách nhanh nhất.
+                    </div>
+                </div>
+                <div class="support">
+                    <h4><i class="fa fa-life-ring"></i> Hỗ Trợ</h4>
+                    <div class="people-support">
+                        <p>
+                            <span>Vấn đề khác:</span>
+                            <i class="fa-brands fa-telegram"></i>
+                            <a href="https://t.me/Diggory_24">Sỹ Thiện</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="contact">
+                    <h4><i class="fa fa-address-card"></i> Liên Hệ</h4>
+                    <div>
+                        <p class="contact-type">
+                            <span style="padding-right: 44px;">Email:</span>
+                            <i class="fa fa-envelope-open"></i>
+                            <span>truyen.tangkinhcac.vn@gmail.com</span>
+                        </p>
+                        <p class="contact-type">
+                            <span style="padding-right: 17px;">Facebook:</span>
+                            <i class="fa-brands fa-square-facebook"></i>
+                            <a href="https://www.facebook.com/truyen.tangkinhcac.vn">Fb.com/tangkinhcac.vn</a>
+                        </p>
+                        <p class="contact-type">
+                            <span style="padding-right: 17px;">Group Facebook:</span>
+                            <i class="fa-brands fa-square-facebook"></i>
+                            <a href="https://www.facebook.com/groups/tangkinhcac.thegioitruyendich">Fb.com/groups/tangkinhcac/</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="grid wide">
+                    <div class="footer-bottom-logo">
+                        <a class="bottom-logo" href="{% url 'home' %}">
+                            <img src="{% static 'images/log-rieng.png' %}" alt="">
+                        </a>
+                        <span>© 2023 Tàng Kinh Các</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+</body>
+
+</html>

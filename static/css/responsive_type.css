@@ -1,0 +1,238 @@
+/* Tablet */
+
+@media (min-width:800px) and (max-width:1023px) {
+    .type-description>p {
+        font-size: 1.6rem;
+    }
+
+    .type-description>p>span {
+        font-size: 1.7rem;
+    }
+
+    .story-full:nth-of-type(even) {
+        margin-right: 0;
+    }
+
+    .story-full__info>div {
+        font-size: 1.6rem;
+    }
+
+    .story-full__info-chap {
+        font-size: 1.5rem;
+    }
+
+    .story-full__info-description {
+        font-size: 1.5rem;
+    }
+
+    .fix-margin{
+        padding: 0;
+    }
+
+    .fix-margin:nth-of-type(odd){
+        padding-right: 0;
+    }
+    
+    .fix-margin:nth-of-type(even){
+        padding-left: 0;
+    }
+
+    .type-story{
+        margin-bottom: 38px;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 575px) {
+
+    .header-for-mobile {
+        display: block !important;
+    }
+
+    .container-for-mobile {
+        display: block !important;
+    }
+
+    .type-page {
+        background-color: #e9e9e9;
+    }
+
+    .type-page>header {
+        background-image: none;
+        height: auto;
+        background-size: unset;
+    }
+
+    .header-for-mobile {
+        margin-bottom: 10px;
+    }
+
+    .type-story-mobile {
+        font-size: 1.3rem;
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 10px;
+        background-color: white;
+    }
+
+    .type-story-mobile>i{
+        font-size: 1.5rem;
+    }
+
+    .type-story-mobile>span {
+        font-size: 1.7rem;
+        font-weight: 500;
+    }
+
+    .type-story-mobile>a{
+        font-size: 1.5rem;
+    }
+
+    .list-type-story {
+        padding-bottom: 0;
+        border-bottom: none;
+        padding: 15px 0;
+        background-color: white;
+    }
+
+    .list-type-story>ul {
+        display: block;
+    }
+
+    .list-type-story li {
+        display: block;
+        width: 100%;
+        padding: 0px 10px;
+        padding-bottom: 25px;
+        border-bottom: 1px solid #e9e9e9;
+        margin-bottom: 18px;
+    }
+
+    .list-type-story a {
+        display: flex;
+    }
+
+    .list-type-story a>img {
+        width: 90px;
+        height: 120px;
+        margin-right: 15px;
+        box-shadow: 3px 3px 3px #c3c3c3;
+    }
+
+    .list-type__info{
+        width: calc(100% - 105px);
+    }
+
+    .list-type__info>h3 {
+        font-size: 1.4rem;
+        margin-bottom: 12px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .list-type__info>div:nth-of-type(1){
+        font-size: 1.3rem;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 3;
+        line-height: 2.2rem;
+        margin-bottom: 10px;
+    }
+
+    .list-type__info>.story-detail-mob{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0;
+        padding: 0;
+    }
+
+    .story-detail-mob span{
+        display: flex;
+        align-items: center;
+    }
+
+    .story-detail-mob span>ion-icon{
+        font-size: 1.6rem;
+        margin-right: 5px;
+    }
+
+    .story-detail-mob span>p{
+        font-size: 1.2rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    footer {
+        background-color: transparent;
+        margin-top: 0px;
+        padding: 0;
+        padding-bottom: 0;
+        border-top: none;
+    }
+
+    .footer-for-tablet {
+        display: none;
+    }
+
+    .bottom-logo>img{
+        width: 70px;
+    }
+
+    .footer-bottom-logo>span {
+        font-size: 1.3rem;
+    }
+
+    /* PAGINATION STORY */
+
+    .pagination-type-story{
+        display: flex;
+        margin: 28px 0;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.1rem;
+    }
+    .pagination-type-story>span{
+        display: block;
+        border: 1px solid grey;
+        margin-right: 10px;
+        padding: 2px 8px;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .pagination-type-story>.number_page{
+        display: flex;
+    }
+    .pagination-type-story>.number_page>span{
+        display: block;
+        border: 1px solid grey;
+        margin-right: 10px;
+        padding: 2px 8px;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .pagination-type-story>.number_page>span.pagination-act{
+        color: white;
+        background-color: rgb(23, 146, 105);
+    }
+
+    #choice-page{
+        width: 50px;
+        height: 22px;
+        outline: none;
+        padding-left: 10px;
+    }
+    #submit-choice{
+        height: 22px;
+        cursor: pointer
+    }
+
+    /* END */
+}

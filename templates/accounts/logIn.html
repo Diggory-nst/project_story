@@ -1,0 +1,98 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- SEO -->
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index,follow" />
+    <meta name="googlebot" content="index,follow" />
+    <meta name="BingBOT" content="index,follow" />
+    <meta name="keywords" content="truyen dich, truyen kiem hiep, truyen ngon tinh, truyen full, truyen hoan thanh, truyen tien hiep, truyen lich su, truyen do thi"/>
+    <meta property="article:tag" content="doc truyen, doc truyen online, truyen hay, truyen full" />
+    <meta property="article:tag" content="kiem hiep, tien hiep, ngon tinh, do thi, huyen huyen, lich su" />
+    <meta property="article:tag" content="truyen dich, truyen ngon tinh, truyen sang tac" />
+
+    <link rel="canonical" href="https://tangkinhcac.vn/">
+    <meta property="og:title" content="Tàng Kinh Các - Thế Giới Truyện Tiên Hiệp Huyền Ảo" />
+    <meta property="og:description" content="Kho tàng truyện chữ Dịch online với nhiều thể loại Kiếm hiệp, Tiên hiệp, Sắc hiệp, Đô thị, Ngôn tình." />
+    <meta property="og:locale" content="vi_VN" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/images/logo_website_1.png" >
+    <meta property="og:image" content="https://ahrefs.com/blog/wp-content/uploads/2019/12/fb-how-to-become-an-seo-expert.png" />
+    <meta property="og:url" content="https://tangthuvien.vn/" />
+    <meta property="og:site_name" content="Tang Kinh Các" />
+
+    <title>Tàng Kinh Các - Thế Giới Truyện Dịch</title>
+    <meta name="description" content="Kho tàng truyện chữ Dịch online với nhiều thể loại Kiếm hiệp, Tiên hiệp, Sắc hiệp, Đô thị, Ngôn tình.">
+
+    <!-- END -->
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/logIn.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive-logIn.css' %}">
+
+    <!-- Link Font -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <section style="background: url({% static 'images/image-background/bg_9.jpg' %});
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: cover;">
+        <div class="form-box">
+            <div class="form-value">
+                <form action="{% url 'logIn' %}" method="POST" autocomplete="new-password">
+                    {%csrf_token%}
+                    <h2>Đăng Nhập</h2>
+                    <div class="inputbox">
+                        <ion-icon name="people-outline"></ion-icon>
+                        <input type="text" name="username" required autocomplete="new-password">
+                        <label>Tài Khoản</label>
+                    </div>
+                    <div class="inputbox">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <!-- Way to prevent autofill of Chrome: use name='new-password' and autocomplete="new-password" -->
+                        <input type="password" name="new-password" required autocomplete="new-password">
+                        <label>Mật Khẩu</label>
+                    </div>
+                    <div class="forget">
+                        <a href="{% url 'forgot_password' %}">Quên mật khẩu</a>
+                    </div>
+                    {% if messages %}
+                    {% for message in messages %}
+                    {% if message.tags == 'error' %}
+                    <p style="color: white; font-size: 1.5rem; margin-bottom: 15px;text-align: center; line-height: 2rem;">{{message}}</p>
+                    <style>
+                        .forget {
+                            margin-bottom: 22px;
+                        }
+                    </style>
+                    {% endif %}
+                    {% endfor %}
+                    {% endif %}
+                    <button type="submit">Đăng Nhập</button>
+                    <div class="register">
+                        <p>Không có tài khoản: <a href="{% url 'registerUser' %}">Đăng Ký</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

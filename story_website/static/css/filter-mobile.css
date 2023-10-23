@@ -1,0 +1,127 @@
+body{
+    margin: 0;
+}
+
+.header-filter{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.3rem;
+    padding: 15px 0px;
+    border-bottom: 1px solid grey;
+}
+
+.header-filter>i{
+    cursor: pointer;
+    padding-left: 10px;
+}
+
+.header-filter>span:first-child{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.header-filter>a{
+    padding-right: 10px;
+}
+
+.filter-story{
+    padding: 0 10px;
+    margin-top: 10px;
+}
+
+.filter-story-item{
+    display: block;
+    width: 100%;
+    padding-bottom: 10px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid grey;
+}
+.filter-story-item>a{
+    display: flex;
+}
+.filter-story-item>a>img{
+    width: 70px;
+    height: 90px;
+    margin-right: 15px;
+}
+.filter-story__info>h3{
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    line-height: 2rem;
+}
+.filter-story__info>span:nth-of-type(1){
+    color: #a6a6a6;
+}
+.filter-story__info>span{
+    display: block;
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+}
+
+.footer-bottom-logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.bottom-logo{
+    margin-bottom: 10px;
+}
+.bottom-logo>img{
+    width: 70px;
+    cursor: pointer;
+}
+
+.footer-bottom-logo>span{
+    font-size: 1.3rem;
+}
+
+/* PAGINATION STORY */
+
+.pagination-filter-story{
+    display: flex;
+    margin-top: 28px;
+    margin-bottom: 50px;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+}
+.pagination-filter-story>span{
+    display: block;
+    border: 1px solid grey;
+    margin-right: 10px;
+    padding: 2px 8px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.pagination-filter-story>.number_page{
+    display: flex;
+}
+.pagination-filter-story>.number_page>span{
+    display: block;
+    border: 1px solid grey;
+    margin-right: 10px;
+    padding: 2px 8px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.pagination-filter-story>.number_page>span.pagination-act{
+    color: white;
+    background-color: rgb(23, 146, 105);
+}
+
+#choice-page{
+    width: 50px;
+    height: 22px;
+    outline: none;
+    padding-left: 10px;
+}
+#submit-choice{
+    height: 22px;
+    cursor: pointer
+}
+
+/* END */

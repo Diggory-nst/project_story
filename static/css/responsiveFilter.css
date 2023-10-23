@@ -1,0 +1,226 @@
+@media (min-width:1200px) and (max-width: 1500px) {
+    .typeof-filter {
+        width: 200px;
+    }
+
+    .section-filtered-story {
+        width: calc(var(--width2) - 220px);
+    }
+
+    .filtered-story li {
+        width: 476px;
+    }
+}
+
+/* Tablet */
+
+@media (min-width:800px) and (max-width:1023px) {
+
+    .filter-status>p {
+        font-size: 2.2rem;
+    }
+
+    .filter-type1>p {
+        font-size: 2.2rem;
+    }
+
+    .filter-number-chap>p {
+        font-size: 2.2rem;
+    }
+
+    .filter-status>ul>li {
+        font-size: 1.8rem;
+    }
+
+    .filter-type1>ul>li {
+        font-size: 1.8rem;
+    }
+
+    .filter-number-chap>ul>li {
+        font-size: 1.8rem;
+    }
+
+    .typeof-filter {
+        width: 165px;
+    }
+
+    .section-filtered-story {
+        width: calc(790px - 180px);
+    }
+
+    .filter-type2-for-tablet>h3 {
+        font-size: 2.2rem;
+    }
+
+    .filter-type2-for-tablet {
+        display: initial;
+    }
+
+    .filtered-story__info>div:nth-of-type(1)>a {
+        font-size: 1.5rem;
+    }
+
+    .filtered-story__info>div:nth-of-type(1)>span {
+        font-size: 1.5rem;
+    }
+
+    .filtered-story__info>p {
+        font-size: 1.6rem;
+    }
+
+    .filtered-story li:nth-of-type(1) {
+        margin-right: 0;
+        margin-bottom: 25px;
+    }
+
+    .filtered-story__info>div:nth-of-type(2)>p {
+        font-size: 1.5rem;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 575px) {
+
+    .header-for-mobile {
+        display: block !important;
+    }
+
+    .container-for-mobile {
+        display: block !important;
+    }
+
+    .filter-page>header {
+        background-image: none;
+        height: auto;
+        background-size: auto;
+    }
+
+    .header-filter {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 1.3rem;
+        padding: 15px 10px;
+    }
+
+    .header-filter>span:nth-of-type(1) {
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+
+    .container-for-mobile {
+        background-color: #cbd8dd33;
+    }
+
+    .filter-type {
+        margin-bottom: 0;
+        padding-top: 20px;
+    }
+
+    .filter-number-chap {
+        margin-bottom: 0;
+        padding-top: 20px;
+    }
+
+    .filter-status {
+        padding-top: 20px;
+        margin-bottom: 0;
+    }
+
+    .filter-status>p {
+        border: none;
+        padding-left: 10px;
+    }
+
+    .filter-status>ul {
+        display: flex;
+        height: 56px;
+        background-color: white;
+        align-items: center;
+        padding-left: 10px;
+    }
+
+    .filter-status>ul>li {
+        font-size: 1.3rem;
+        margin-top: 0;
+        margin-right: 15px;
+    }
+
+    .filter-type>p {
+        border: none;
+        padding-left: 10px;
+    }
+
+    .filter-type>ul {
+        display: flex;
+        flex-wrap: wrap;
+        height: 182px;
+        padding: 15px 0;
+        background-color: white;
+        align-items: center;
+        padding-left: 10px;
+    }
+
+    .filter-type>ul>li {
+        font-size: 1.3rem;
+        margin-top: 0;
+        margin-right: 15px;
+    }
+
+
+    .filter-number-chap>p {
+        border: none;
+        padding-left: 10px;
+    }
+
+    .filter-number-chap>ul {
+        display: flex;
+        flex-wrap: wrap;
+        height: 100px;
+        padding: 10px 0;
+        background-color: white;
+        align-items: center;
+        padding-left: 10px;
+    }
+
+    .filter-number-chap>ul>li {
+        font-size: 1.3rem;
+        margin-top: 0;
+        margin-right: 15px;
+    }
+
+    .sorted-by {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .sorted-by>p {
+        border: none;
+        padding-left: 10px;
+    }
+
+    .sorted-by>ul {
+        display: flex;
+        height: 56px;
+        background-color: white;
+        align-items: center;
+        padding-left: 10px;
+    }
+
+    .sorted-by>ul>li {
+        font-size: 1.3rem;
+        margin-top: 0;
+        margin-right: 15px;
+    }
+
+    footer {
+        background-color: transparent;
+        margin-top: 0px;
+        padding: 0;
+        padding-bottom: 0;
+        border-top: none;
+    }
+
+
+}

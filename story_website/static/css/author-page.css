@@ -1,0 +1,119 @@
+.author-info {
+    display: flex;
+    margin-top: 40px;
+}
+
+.info-author {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    margin-bottom: 20px;
+    width: 216px;
+    height: 320px;
+    background-color: #f7f6f2;
+    border-radius: 0px;
+}
+
+.info-author>img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.info-author>span {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.info-author>hr:nth-of-type(1) {
+    width: 100%;
+    margin-bottom: 15px;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, .1);
+    border-color: #eee !important;
+}
+
+.info-author>div {
+    display: flex;
+    align-items: center;
+}
+
+.author-number-chap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 40px;
+}
+
+.author-number-chap>i {
+    font-size: 3.2rem;
+    margin-bottom: 10px;
+    color: #adadad;
+}
+
+.author-number-chap>span {
+    font-size: 1.2rem;
+}
+
+.info-author>div>span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.info-author>div>span>i {
+    font-size: 3.2rem;
+    margin-bottom: 10px;
+    color: #adadad;
+}
+
+.info-author>div>span>span {
+    font-size: 1.2rem;
+}
+
+.info-author>hr:nth-of-type(2) {
+    width: 100%;
+    margin-top: 15px;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, .1);
+    border-color: #eee !important;
+}
+
+.section-filtered-story {
+    width: calc(var(--width1) - 246px);
+}
+
+.filtered-story li:nth-of-type(odd) {
+    margin-right: 38px;
+}
+
+.filtered-story li {
+    width: 558px;
+    margin-bottom: 50px;
+}
+
+.filtered-story>ul {
+    flex-wrap: wrap;
+}
+
+/* CSS for Mobile */
+
+.header-for-mobile {
+    width: 100%;
+    height: 36px;
+    position: relative;
+    padding: 10px 0;
+    border-bottom: 1px solid #a6a6a6;
+}
+
+.header-for-mobile>a>img {
+    width: 124px;
+    height: 14px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-62px);
+}

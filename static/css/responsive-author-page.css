@@ -1,0 +1,134 @@
+/* Tablet */
+
+@media (min-width:800px) and (max-width:1023px) {
+    /* author-page */
+
+    .section-filtered-story {
+        width: calc(790px - 232px);
+        margin-left: 15px;
+    }
+
+    .filtered-story>ul {
+        display: block;
+    }
+
+    .filtered-story {
+        border: none;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 575px) {
+
+    .header-for-mobile {
+        display: block !important;
+    }
+
+    .container-for-mobile {
+        display: block !important;
+    }
+
+    .author-info {
+        display: block;
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .info-author {
+        width: 100%;
+        height: auto;
+        background-color: white;
+        padding: 0px;
+        padding-bottom: 15px;
+        margin-top: 5px;
+        border-bottom: 1px solid #a6a6a6;
+    }
+
+    .info-author>img {
+        width: 80px;
+        height: 80px;
+        margin-top: 5px;
+    }
+
+    .author-number-chap {
+        margin-right: 95px;
+    }
+
+    .author-number-chap>span {
+        color: #a6a6a6;
+    }
+
+    .author-number-chap>span:last-child {
+        color: black;
+        margin-top: 5px;
+        font-size: 1.5rem;
+    }
+
+    .info-author>div>span>span {
+        color: #a6a6a6;
+    }
+
+    .info-author>div>span>span:last-child {
+        color: black;
+        margin-top: 5px;
+        font-size: 1.5rem;
+    }
+
+    .section-filtered-story {
+        width: 100%;
+        margin-left: 0px;
+    }
+
+    .filtered-story {
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+
+    .filtered-story>ul {
+        display: block;
+    }
+
+    .filtered-story li {
+        display: block;
+        width: 100%;
+        padding: 0px 10px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #a6a6a6;
+        margin-bottom: 18px;
+    }
+
+    .filtered-story a {
+        display: flex;
+    }
+
+    .filtered-story a>img {
+        width: 60px;
+        height: 80px;
+        margin-right: 15px;
+    }
+
+    .filtered-story__info>h3 {
+        font-size: 1.3rem;
+        margin-bottom: 8px;
+    }
+
+    .filtered-story__info>span {
+        display: block;
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+    }
+
+    .filtered-story__info>span:nth-of-type(1) {
+        color: #a6a6a6;
+    }
+
+    footer {
+        background-color: white;
+        margin-top: 0;
+        padding: 0;
+        padding-bottom: 0;
+        border-top: none;
+    }
+
+}

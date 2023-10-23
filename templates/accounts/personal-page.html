@@ -1,0 +1,502 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- SEO -->
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index,follow" />
+    <meta name="googlebot" content="index,follow" />
+    <meta name="BingBOT" content="index,follow" />
+    <meta name="keywords" content="truyen dich, truyen kiem hiep, truyen ngon tinh, truyen full, truyen hoan thanh, truyen tien hiep, truyen lich su, truyen do thi"/>
+    <meta property="article:tag" content="doc truyen, doc truyen online, truyen hay, truyen full" />
+    <meta property="article:tag" content="kiem hiep, tien hiep, ngon tinh, do thi, huyen huyen, lich su" />
+    <meta property="article:tag" content="truyen dich, truyen ngon tinh, truyen sang tac" />
+
+    <link rel="canonical" href="https://tangkinhcac.vn/">
+    <meta property="og:title" content="Tàng Kinh Các - Thế Giới Truyện Tiên Hiệp Huyền Ảo" />
+    <meta property="og:description" content="Kho tàng truyện chữ Dịch online với nhiều thể loại Kiếm hiệp, Tiên hiệp, Sắc hiệp, Đô thị, Ngôn tình." />
+    <meta property="og:locale" content="vi_VN" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/images/logo_website_1.png" >
+    <meta property="og:image" content="https://ahrefs.com/blog/wp-content/uploads/2019/12/fb-how-to-become-an-seo-expert.png" />
+    <meta property="og:url" content="https://tangthuvien.vn/" />
+    <meta property="og:site_name" content="Tang Kinh Các" />
+
+    <title>Tàng Kinh Các - Thế Giới Truyện Dịch</title>
+    <meta name="description" content="Kho tàng truyện chữ Dịch online với nhiều thể loại Kiếm hiệp, Tiên hiệp, Sắc hiệp, Đô thị, Ngôn tình.">
+
+    <!-- END -->
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/grid_system.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home-page-new.css' %}">
+    <link rel="stylesheet" href="{% static 'css/personale-page.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive-personal.css' %}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Link Font -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+
+    <!-- Link JS -->
+    <script src="{% static 'js/base-personal-page.js' %}" async></script>
+
+</head>
+
+<body>
+    <div class="personal-page">
+        <header>
+            <a href="{% url 'home' %}">
+                <div class="cover-photo hidden-mobile"
+                    style="background-image: url({% static 'images/image-background/bg_9.jpg' %}); background-position: 0px -476px;">
+                </div>
+            </a>
+            <div class="header-mobile">
+                <div>
+                    <a href="{% url 'home' %}" style="color: white;">Xong</a>
+                </div>
+                <div>
+                    <img src="{{userProfile.profile_picture.url}}" alt="">
+                    <span>{{user.username}}</span>
+                </div>
+            </div>
+        </header>
+        <div class="container hidden-mobile">
+            <div class="grid wide">
+                <div class="row">
+                    <div class="personal-body">
+                        <div class="personal-category">
+                            <ul>
+                                <li class="personal-category__item act">
+                                    <span id="personal">
+                                        <i class="fa-regular fa-user"></i>
+                                        Cá Nhân</span>
+                                </li>
+                                <li class="personal-category__item">
+                                    <span id="list-read">
+                                        <i class="fa-regular fa-folder-open"></i>
+                                        Danh Sách Đọc</span>
+                                </li>
+                                <li class="personal-category__item">
+                                    <span id="purchase-history">
+                                        <i class="fa-solid fa-clock-rotate-left"></i>
+                                        Lịch Sử Nạp</span>
+                                </li>
+                                <li class="personal-category__item">
+                                    <span>
+                                        <i class="fa-solid fa-basket-shopping"></i>
+                                        Shop Vật Phẩm</span>
+                                </li>
+                                <li class="personal-category__item">
+                                    <a href="{% url 'logOut' %}">
+                                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                        Đăng Xuất</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="personal-info">
+                            <div class="personal-info__header">
+                                <div class="personal-info__header-cover-photo"
+                                    style="background-image: url({% static 'images/personal-info-photo.png' %});">
+                                    <img src="{% static 'images/default-avatar.jpeg' %}" alt="">
+                                    <span>{{user.username}}</span>
+                                </div>
+                                <div class="personal-info__header-level">
+                                    <span>Bá Tánh Bình Dân</span>
+                                </div>
+                            </div>
+                            <div class="personal-info__body">
+                                <div class="account-balance">
+                                    <span>Ngân Quỹ</span>
+                                    <span>Linh Thạch: {{userProfile.number_lt}}</span>
+                                    <span>
+                                        <a href="#">Nạp Linh Thạch</a>
+                                    </span>
+                                </div>
+                                <form action="{% url 'my_account' %}" method="POST">
+                                    {%csrf_token%}
+                                    <div class="personal-info__body-detail-info">
+                                        <div class="form-group">
+                                            <label for="email">Email</label>
+                                            <input type="email" id="email" value="{{user.email}}">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="password">Mật Khẩu</label>
+                                            <input type="password" id="password" name="password">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="new-password">Mật Khẩu Mới</label>
+                                            <input type="password" id="new-password" name="new-password">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="confirm-password">Xác Nhận Lại Mật Khẩu</label>
+                                            <input type="password" id="confirm-password" name="confirm-password">
+                                        </div>
+                                        {% if messages %}
+                                        {% for message in messages %}
+                                        {% if message.tags == 'error' %}
+                                        <span
+                                            style="color: red; font-size: 1.5rem; margin-bottom: 15px;">{{message}}</span>
+                                        {% endif %}
+                                        {% endfor %}
+                                        {% endif %}
+                                        <input type="submit" value="Lưu Lại" class="save-info">
+                                    </div>
+                                </form>
+                            </div>
+                            {% if user.is_admin == True and user.is_superadmin == True %}
+                            <div class="for-admin">
+                                <a href="{% url 'add_story' %}" class="add-story-admin">Thêm Truyện</a>
+                                <a href="{% url 'add_chapter' %}" class="add-chapter-admin">Thêm Chương</a>
+                            </div>
+                            {% endif %}
+                        </div>
+                        <div class="listed-story" style="display: none;">
+                            {% for list_read in list_reads %}
+                            <div>
+                                <div class="story-full__info">
+                                    <span class="story-full__info-name">
+                                        <a href="{% url 'display_info_story' list_read.story.pk list_read.story.slug %}">{{list_read.story.title}}</a>
+                                    </span>
+                                    <div>
+                                        <span class="story-full__info-author">{{list_read.story.author}}</span>
+                                        <span class="label-type">Dịch</span>
+                                    </div>
+                                    <span class="story-full__info-chap">{{list_read.story.number_of_chapter}} Chương</span>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <div class="transaction-history hidden-tablet" style="display: none;">
+                            <div>
+                                <h3 id="lsntt" class="act">Lịch sử nạp Tinh Thạch</h3>
+                                <h3 id="lsmh">Lịch sử mua hàng</h3>
+                            </div>
+                            <p style="font-size: 1.6rem; text-align: center; margin-top: 20px;">Lưu ý: Chỉ hiện thị lịch sử mua theo Combo. Không hiển thị lịch sử mua lẻ từng chương</p>
+                            <table class="naptt-history__detail" id="naptt-history__detail">
+                                <tr class="tr-title">
+                                    <th>Mã Giao Dịch</th>
+                                    <th>Số Tiền Nạp</th>
+                                    <th>Số TT Nhận</th>
+                                    <th>Hình Thức</th>
+                                    <th>Ngày Nạp</th>
+                                </tr>
+                                {% for payment in payments %}
+                                <tr class="tr-item">
+                                    <th>{{payment.transaction_id}}</th>
+                                    <th>{{payment.amount}}</th>
+                                    <th>{{payment.amount_received}}</th>
+                                    <th>{{payment.transaction_form}}</th>
+                                    <th>{{payment.created_at}}</th>
+                                </tr>
+                                {% endfor %}
+                            </table>
+                            <table class="purchase-history__detail" id="purchase-history__detail" style="display: none;">
+                                <tr class="tr-title">
+                                    <th>Tên Truyện</th>
+                                    <th>Tổng Chương</th>
+                                    <th>Tổng Tiền</th>
+                                    <th>Ngày Mua</th>
+                                </tr>
+                                {% for order in orders %}
+                                <tr class="tr-item">
+                                    <th>{{order.story.title}}</th>
+                                    <th>{{order.total_chapter}}</th>
+                                    <th>{{order.total_money}} Linh Thạch</th>
+                                    <th>{{order.created_at}}</th>
+                                </tr>
+                                {% endfor %}
+                            </table>
+                        </div>
+                        <div class="transaction-history-for-tablet" style="display: none;">
+                            <div>
+                                <h3 id="lsntt-tablet" class="act">Lịch sử nạp Tinh Thạch</h3>
+                                <h3 id="lsmh-tablet">Lịch sử mua hàng</h3>
+                            </div>
+                            <table class="naptt-history__detail" id="naptt-history__detail-tablet">
+                                <tr class="tr-title">
+                                    <th>Số Tiền Nạp</th>
+                                    <th>Số TT Nhận</th>
+                                    <th>Hình Thức</th>
+                                    <th>Ngày Nạp</th>
+                                </tr>
+                                {% for payment in payments %}
+                                <tr class="tr-item">
+                                    <th>{{payment.amount}}</th>
+                                    <th>{{payment.amount_received}}</th>
+                                    <th>{{payment.transaction_form}}</th>
+                                    <th>{{payment.created_at}}</th>
+                                </tr>
+                                {% endfor %}
+                            </table>
+                            <table class="purchase-history__detail" id="purchase-history__detail-tablet" style="display: none;">
+                                <tr class="tr-title">
+                                    <th>Tên Truyện</th>
+                                    <th>Tổng Chương</th>
+                                    <th>Tổng Tiền</th>
+                                    <th>Ngày Mua</th>
+                                </tr>
+                                {% for order in orders %}
+                                <tr class="tr-item">
+                                    <th>{{order.story.title}}</th>
+                                    <th>{{order.total_chapter}}</th>
+                                    <th>{{order.total_money}} Linh Thạch</th>
+                                    <th>{{order.created_at}}</th>
+                                </tr>
+                                {% endfor %}
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-for-mobile">
+            <div class="amount-of-lt">
+                <span>Bá Tánh Bình Dân</span>
+                <span><b>{{userProfile.number_lt}}</b> Linh Thạch</span>
+            </div>
+            <div class="personal-category">
+                <ul>
+                    <li class="personal-category__item">
+                        <a href="#" id="personal-mobile">
+                            <i class="fa-regular fa-user"></i>
+                            Cá Nhân</a>
+                    </li>
+                    <li class="personal-category__item">
+                        <a href="#" id="list-read-mobile">
+                            <i class="fa-regular fa-folder-open"></i>
+                            Danh Sách Đọc</a>
+                    </li>
+                    <li class="personal-category__item">
+                        <a href="#" id="purchase-history-mobile">
+                            <i class="fa-solid fa-clock-rotate-left"></i>
+                            Lịch Sử Nạp</a>
+                    </li>
+                    <li class="personal-category__item">
+                        <a href="#">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                            Shop Vật Phẩm</a>
+                    </li>
+                </ul>
+            </div>
+            <a href="{% url 'logOut' %}">
+                <div class="logOut">
+                    <span>Đăng Xuất</span>
+                </div>
+            </a>
+        </div>
+        <div class="personal-info-mobile" style="display: none;">
+            <div>
+                <i class="fa-solid fa-arrow-left back-mob" style="cursor: pointer;"></i>
+                <span>Cá Nhân</span>
+                <span class="done-mob" style="cursor: pointer;">Xong</span>
+            </div>
+            <form action="{% url 'my_account' %}" method="POST">
+                {%csrf_token%}
+                <div class="personal-info__body-detail-info">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email-mobile" value="{{user.email}}">
+                    </div>
+                    <!-- <div class="form-group">
+                        <label for="fullname">Họ Và Tên</label>
+                        <input type="text" id="fullname">
+                    </div> -->
+                    <div class="form-group">
+                        <label>Mật Khẩu</label>
+                        <input type="password" id="password-mobile" name="password">
+                    </div>
+                    <div class="form-group">
+                        <label for="new-password">Mật Khẩu Mới</label>
+                        <input type="password" id="new-password-mobile" name="new-password">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm-password">Xác Nhận Lại Mật Khẩu</label>
+                        <input type="password" id="confirm-password-mobile" name="confirm-password">
+                    </div>
+                    {% if messages %}
+                    {% for message in messages %}
+                    {% if message.tags == 'error' %}
+                    <span
+                        style="color: red; font-size: 1.5rem; margin-bottom: 15px;">{{message}}</span>
+                    {% endif %}
+                    {% endfor %}
+                    {% endif %}
+                    <input type="submit" value="Lưu Lại" class="save-info">
+                </div>
+            </form>
+        </div>
+        <div class="list-read-mobile" style="display: none;">
+            <div>
+                <i class="fa-solid fa-arrow-left back-mob" style="cursor: pointer;"></i>
+                <span>Danh Sách Đọc</span>
+                <span class="done-mob" style="cursor: pointer;">Xong</span>
+            </div>
+            <div class="list-read__list">
+                <ul>
+                    {% for list_read in list_reads %}
+                    <li>
+                        <a href="{% url 'display_info_story' list_read.story.pk list_read.story.slug %}">
+                            <img src="./images/image-filter/img-1.jpg" alt="">
+                            <div class="list-read__story-info">
+                                <h3>{{list_read.story.title}}</h3>
+                                <span>Tác Giả: {{list_read.story.author}}</span>
+                                <span>Lượt Xem: {{list_read.story.number_of_views}}</span>
+                                <span>Tình Trạng: {{list_read.story.status}}</span>
+                                <span>Số Chương: {{list_read.story.number_of_chapter}}</span>
+                            </div>
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="purchase-history-mobile" style="display: none;">
+            <div>
+                <i class="fa-solid fa-arrow-left back-mob" style="cursor: pointer;"></i>
+                <span>Lịch Sử Nạp</span>
+                <span class="done-mob" style="cursor: pointer;">Xong</span>
+            </div>
+            <div class="purchase-history__detail">
+                {% for payment in payments %}
+                <div>
+                    <span class="trading-code"><b>Mã Giao Dịch</b>: {{payment.transaction_id}}</span>
+                    <div class="trading-code__info">
+                        <span><b>Số Tiền Nạp</b>: {{payment.amount}}</span>
+                        <span><b>Số Tinh Thạch Nhận</b>: {{payment.amount_received}}</span>
+                        <span><b>Hình Thức</b>: {{payment.transaction_form}}</span>
+                        <span><b>Ngày Nạp</b>: {{payment.created_at}}</span>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <footer>
+            <div class="footer hidden-tablet hidden-mobile">
+                <div class="grid wide">
+                    <div class="row">
+                        <div class="col xl-6 l-6" style="padding-left: 0;">
+                            <div class="introduce-about-web">
+                                <h4><i class="fa fa-info-circle"></i> Giới Thiệu</h4>
+                                <div>
+                                    Đọc truyện online, truyện chữ, truyen
+                                    full, truyện hay được đóng góp hoàn toàn bởi các thành
+                                    viên: dịch giả, tác giả, editor.. tâm huyết. Web truyen luôn cập nhật những bộ
+                                    truyện
+                                    mới thuộc các thể loại đặc sắc như ngôn tình,
+                                    tình cảm, đam mỹ, bách
+                                    hợp một cách nhanh nhất.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col xl-3 l-3">
+                            <div class="support">
+                                <h4><i class="fa fa-life-ring"></i> Hỗ Trợ</h4>
+                                <div class="people-support">
+                                    <p>
+                                        <span>Vấn đề khác:</span>
+                                        <i class="fa-brands fa-telegram"></i>
+                                        <a href="https://t.me/Diggory_24">Sỹ Thiện</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col xl-3 l-3" style="padding-right: 0;">
+                            <div class="contact">
+                                <h4><i class="fa fa-address-card"></i> Liên Hệ</h4>
+                                <div>
+                                    <p class="contact-type">
+                                        <span style="padding-right: 44px;">Email:</span>
+                                        <i class="fa fa-envelope-open"></i>
+                                        <span>truyen.tangkinhcac.vn@gmail.com</span>
+                                    </p>
+                                    <p class="contact-type">
+                                        <span style="padding-right: 17px;">Facebook:</span>
+                                        <i class="fa-brands fa-square-facebook"></i>
+                                        <a href="https://www.facebook.com/truyen.tangkinhcac.vn">Fb.com/tangkinhcac.vn</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-for-tablet" style="display: none;">
+                <div class="grid wide">
+                    <div class="row">
+                        <div class="col m-12" style="padding-left: 0; padding-right: 0;">
+                            <div class="introduce-about-web">
+                                <h4><i class="fa fa-info-circle"></i> Giới Thiệu</h4>
+                                <div>
+                                    Đọc truyện online, truyện chữ, truyen
+                                    full, truyện hay được đóng góp hoàn toàn bởi các thành
+                                    viên: dịch giả, tác giả, editor.. tâm huyết. Web truyen luôn cập nhật những bộ
+                                    truyện
+                                    mới thuộc các thể loại đặc sắc như ngôn tình,
+                                    tình cảm, đam mỹ, bách
+                                    hợp một cách nhanh nhất.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col m-6">
+                            <div class="support">
+                                <h4><i class="fa fa-life-ring"></i> Hỗ Trợ</h4>
+                                <div class="people-support">
+                                    <p>
+                                        <span>Vấn đề khác:</span>
+                                        <i class="fa-brands fa-telegram"></i>
+                                        <a href="https://t.me/Diggory_24">Sỹ Thiện</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col m-6" style="padding-right: 0;">
+                            <div class="contact">
+                                <h4><i class="fa fa-address-card"></i> Liên Hệ</h4>
+                                <div>
+                                    <p class="contact-type">
+                                        <span style="padding-right: 44px;">Email:</span>
+                                        <i class="fa fa-envelope-open"></i>
+                                        <span>truyen.tangkinhcac.vn@gmail.com</span>
+                                    </p>
+                                    <p class="contact-type">
+                                        <span style="padding-right: 17px;">Facebook:</span>
+                                        <i class="fa-brands fa-square-facebook"></i>
+                                        <a href="https://www.facebook.com/truyen.tangkinhcac.vn">Fb.com/tangkinhcac.vn</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom hidden-mobile">
+                <div class="grid wide">
+                    <div class="footer-bottom-logo">
+                        <a class="bottom-logo" href="{% url 'home' %}">
+                            <img src="{% static 'images/log-rieng.png' %}" alt="">
+                        </a>
+                        <span class="hidden-mobile">© 2007 Tàng Kinh Các</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

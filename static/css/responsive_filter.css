@@ -1,0 +1,218 @@
+@media (min-width:1200px) and (max-width: 1500px) {
+    .typeof-filter {
+        width: 200px;
+    }
+
+    .section-filtered-story {
+        width: calc(var(--width2) - 230px);
+    }
+}
+
+/* Tablet */
+
+@media (min-width:800px) and (max-width:1023px) {
+
+    .filter-status>p {
+        font-size: 2.2rem;
+    }
+
+    .filter-type1>p {
+        font-size: 2.2rem;
+    }
+
+    .filtered-story>ul{
+        display: block;
+    }
+
+    .filter-status>ul>li {
+        font-size: 1.8rem;
+        margin-top: 35px;
+    }
+
+    .filter-type1>ul>li {
+        font-size: 1.8rem;
+    }
+
+    .typeof-filter {
+        width: 184px;
+    }
+
+    .section-filtered-story {
+        width: calc(100% - 214px);
+    }
+
+    .filtered-story__info>div:nth-of-type(1)>a {
+        font-size: 1.5rem;
+    }
+
+    .filtered-story__info>div:nth-of-type(1)>span {
+        font-size: 1.5rem;
+    }
+
+    .filtered-story__info>p {
+        font-size: 1.6rem;
+    }
+
+    .filtered-story li{
+        width: 100%;
+    }
+
+    .filtered-story li:nth-of-type(1) {
+        margin-right: 0;
+        margin-bottom: 25px;
+    }
+
+    .filtered-story__info>div:nth-of-type(2)>p {
+        font-size: 1.5rem;
+    }
+
+    .filter-type2>div>ul{
+        flex-wrap: wrap;
+    }
+
+    .filter-type2>div>ul>li{
+        margin-right: 20px;
+        margin-bottom: 10px;
+    }
+    
+    .filter-type2>div>ul>li:nth-of-type(7){
+        margin-bottom: 0px;
+    }
+    .filter-type2>div>ul>li:nth-of-type(8){
+        margin-bottom: 0px;
+    }
+    .filter-type2>div>ul>li:nth-of-type(9){
+        margin-bottom: 0px;
+    }
+    .filter-type2>div>ul>li:nth-of-type(10){
+        margin-bottom: 0px;
+    }
+    .filter-type2>div>ul>li:nth-of-type(11){
+        margin-bottom: 0px;
+    }
+    .filter-type2>div>ul>li:nth-of-type(12){
+        margin-bottom: 0px;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 575px) {
+
+    body{
+        background-color: #f5f7f8;
+    }
+
+    .header-for-mobile {
+        display: block !important;
+    }
+
+    .container-for-mobile {
+        display: block !important;
+    }
+
+    .filter-page>header {
+        background-image: none;
+        height: auto;
+        background-size: auto;
+        background-color: white;
+    }
+
+    .header-filter {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 1.3rem;
+        padding: 15px 10px;
+    }
+
+    .header-filter>i{
+        font-size: 1.5rem;
+    }
+
+    .header-filter>span:nth-of-type(1) {
+        font-size: 1.7rem;
+        font-weight: 600;
+    }
+
+    .header-filter>span:nth-of-type(2) {
+        cursor: pointer;
+        font-size: 1.5rem;
+    }
+
+    .container-for-mobile {
+        background-color: #cbd8dd33;
+    }
+
+    .filter-type {
+        margin-bottom: 0;
+        padding-top: 20px;
+    }
+
+    .filter-status {
+        padding-top: 20px;
+        margin-bottom: 0;
+    }
+
+    .filter-status>p {
+        border: none;
+        padding-left: 10px;
+    }
+
+    .filter-status>ul {
+        display: flex;
+        height: 56px;
+        background-color: white;
+        align-items: center;
+        padding-left: 10px;
+    }
+
+    .filter-status>ul>li {
+        font-size: 1.3rem;
+        margin-top: 0;
+        margin-right: 15px;
+        cursor: pointer;
+    }
+
+    .filter-type>p {
+        border: none;
+        padding-left: 10px;
+    }
+
+    .filter-type>ul {
+        display: flex;
+        flex-wrap: wrap;
+        height: 182px;
+        padding: 15px 0;
+        background-color: white;
+        align-items: center;
+        padding-left: 10px;
+    }
+
+    .filter-type>ul>li {
+        font-size: 1.3rem;
+        margin-top: 0;
+        margin-right: 15px;
+    }
+
+    footer {
+        background-color: transparent;
+        margin-top: 0px;
+        padding: 0;
+        padding-bottom: 0;
+        border-top: none;
+    }
+
+    .footer-bottom{
+        margin-top: 10px;
+    }
+
+    .bottom-logo>img{
+        width: 70px;
+    }
+
+    .footer-bottom-logo>span{
+        font-size: 1.3rem;
+    }
+
+}

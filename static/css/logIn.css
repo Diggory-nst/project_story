@@ -1,0 +1,120 @@
+body>.logIn-page {
+    height: 100vh;
+    background-position: top;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    border: 0;
+}
+
+.section-logIn {
+    position: absolute;
+    left: 50%;
+    transform: translate(-212.5px, -190px);
+    top: 50%;
+    width: 425px;
+    min-height: 380px;
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+.section-signUp {
+    position: absolute;
+    left: 50%;
+    transform: translate(-212.5px, -252px);
+    top: 50%;
+    width: 425px;
+    min-height: 504px;
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logIn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logIn>h4 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.logIn>.forgot-password {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+}
+
+.form-group>label {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+}
+
+.form-group>input {
+    width: 350px;
+    height: 30px;
+    outline: none;
+    padding-left: 15px;
+}
+
+
+.logIn .btn-logIn {
+    font-size: 1.6rem;
+    border: 1px solid grey;
+    padding: 10px 64px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.logIn .btn-signUp {
+    font-size: 1.6rem;
+    border: 1px solid;
+    padding: 6px 40px;
+}
+
+.signUp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.signUp>h4 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.signUp>p {
+    text-align: center;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.signUp .btn-signUp {
+    font-size: 1.6rem;
+    border: 1px solid grey;
+    padding: 10px 90px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.signUp .btn-logIn {
+    font-size: 1.6rem;
+    border: 1px solid;
+    padding: 6px 40px;
+}

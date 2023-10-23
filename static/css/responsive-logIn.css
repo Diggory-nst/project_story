@@ -1,0 +1,56 @@
+@media (max-width: 575px) {
+
+    .section-logIn {
+        transform: translate(-135px, -174px);
+        width: 270px;
+        height: 348px;
+    }
+
+    .logIn>h4 {
+        font-size: 1.6rem;
+    }
+
+    .form-group>label {
+        font-size: 1.4rem;
+    }
+
+    .form-group>input {
+        width: 230px;
+        height: 25px;
+    }
+
+    .logIn .btn-logIn {
+        font-size: 1.4rem;
+        padding: 6px 36px;
+    }
+
+    .logIn>span {
+        font-size: 1.3rem;
+    }
+
+    .logIn .btn-signUp {
+        font-size: 1.4rem;
+        padding: 5px 28px;
+    }
+
+    .section-signUp {
+        transform: translate(-135px, -174px);
+        width: 270px;
+        height: 348px;
+        overflow-y: scroll;
+    }
+
+    .signUp>h4 {
+        font-size: 1.6rem;
+    }
+
+    .signUp .btn-signUp {
+        font-size: 1.4rem;
+        padding: 6px 36px;
+    }
+
+    .signUp .btn-logIn {
+        font-size: 1.4rem;
+        padding: 5px 16px;
+    }
+}

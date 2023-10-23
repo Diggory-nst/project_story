@@ -1,0 +1,56 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/grid_system.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home-page-new.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive-home-page.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/detail-story.css' %}">
+    <link rel="stylesheet" href="{% static 'css/filter.css' %}">
+    <link rel="stylesheet" href="{% static 'css/personale-page.css' %}">
+    <link rel="stylesheet" href="{% static 'css/author-page.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive-author-page.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive-detail-story.css' %}">
+    <link rel="stylesheet" href="{% static 'css/display-story.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive-display-story.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsiveFilter.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive-personal.css' %}">
+    <link rel="stylesheet" href="{% static 'css/type.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive-type.css' %}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Link Font -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+
+    <!-- Link JS -->
+    <script src="{% static 'js/slideshow.js' %}" async></script>
+    <script src="{% static 'js/base-home-page.js' %}" async></script>
+
+    <script src="{% static 'js/base.js' %}" async></script>
+    <script src="{% static 'js/base-personal-page.js' %}" async></script>
+    <script src="{% static 'js/base-display-story.js' %}" async></script>
+    <script src="{% static 'js/base-detail-story.js' %}" async></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- LOAD CONTENT HERE -->
+    {% block content %}
+    {% endblock %}
+</body>
+
+</html>
